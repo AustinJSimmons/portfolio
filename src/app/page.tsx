@@ -1,69 +1,217 @@
-import Image from "next/image";
+import Link from 'next/link';
+import {
+  ArrowRight,
+  ExternalLink,
+  Layers,
+  Mail,
+  Shield,
+  Sparkles,
+} from 'lucide-react';
+import { GitHubIcon, LinkedInIcon } from '@/components/Icons';
+import {
+  ADDITIONAL_PROJECTS,
+  FEATURED_PROJECTS,
+  PROFILE,
+} from '@/data/projects';
+import { ProjectCard } from '@/components/ProjectCard';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <div className="mx-auto max-w-6xl px-6 py-12 sm:py-16 space-y-20">
+      {/* Hero Section */}
+      <section className="space-y-6">
+        <div className="inline-flex items-center gap-2 rounded-full border border-teal-700/20 bg-accent-soft px-3.5 py-1 text-xs font-semibold text-accent-strong">
+          <Sparkles className="h-3.5 w-3.5" />
+          <span>{PROFILE.presentationContext}</span>
+        </div>
+
+        <div className="max-w-4xl space-y-4">
+          <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-[54px] lg:leading-[1.1]">
+            {PROFILE.role}
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-lg leading-relaxed text-muted sm:text-xl">
+            {PROFILE.tagline}
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+
+        <div className="rounded-2xl border border-border bg-surface p-5 sm:p-6">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="space-y-1">
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-accent">
+                <Shield className="h-3.5 w-3.5" />
+                <span>Target Audience &amp; Positioning</span>
+              </div>
+              <p className="text-sm sm:text-base font-medium text-foreground">
+                {PROFILE.targetAudience}
+              </p>
+            </div>
+
+            <div className="no-print flex flex-wrap items-center gap-3 shrink-0">
+              <Link
+                href="#featured-projects"
+                className="inline-flex items-center gap-2 rounded-xl bg-foreground px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
+              >
+                <span>Explore Featured Work</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-slate-50"
+              >
+                <span>Experience &amp; Bio</span>
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-4 flex flex-wrap items-center gap-5 border-t border-border/80 pt-4 text-sm font-medium text-muted">
+            <a
+              href={PROFILE.links.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
+            >
+              <GitHubIcon className="h-4 w-4" />
+              <span>github.com/AustinJSimmons</span>
+            </a>
+            <a
+              href={PROFILE.links.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
+            >
+              <LinkedInIcon className="h-4 w-4" />
+              <span>LinkedIn</span>
+            </a>
+            <a
+              href={`mailto:${PROFILE.links.email}`}
+              className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
+            >
+              <Mail className="h-4 w-4" />
+              <span>{PROFILE.links.email}</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Projects */}
+      <section id="featured-projects" className="space-y-6 scroll-mt-24">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <span className="font-mono text-xs font-semibold uppercase tracking-wider text-accent">
+              Presentation Lineup (2–3 Projects)
+            </span>
+            <h2 className="mt-1 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              Featured Case Studies
+            </h2>
+          </div>
+          <p className="max-w-md text-sm text-muted">
+            Structured around technical process, implementation challenges, personal contributions, and verified outcomes.
+          </p>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-3">
+          {FEATURED_PROJECTS.map((project, index) => (
+            <ProjectCard key={project.slug} project={project} index={index} />
+          ))}
+        </div>
+      </section>
+
+      {/* Skills & Competencies Matrix */}
+      <section className="space-y-6">
+        <div>
+          <span className="font-mono text-xs font-semibold uppercase tracking-wider text-accent">
+            Core Capabilities
+          </span>
+          <h2 className="mt-1 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            Skills &amp; Technical Stack
+          </h2>
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {PROFILE.skillGroups.map((group) => (
+            <div
+              key={group.category}
+              className="print-break-avoid rounded-2xl border border-border bg-surface p-5"
+            >
+              <h3 className="text-sm font-bold uppercase tracking-wide text-foreground">
+                {group.category}
+              </h3>
+              <ul className="mt-3 space-y-2">
+                {group.skills.map((skill) => (
+                  <li
+                    key={skill}
+                    className="flex items-start gap-2 text-sm text-slate-700"
+                  >
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                    <span>{skill}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Additional GitHub Projects */}
+      <section className="space-y-6">
+        <div className="flex items-center justify-between gap-4">
+          <div>
+            <span className="font-mono text-xs font-semibold uppercase tracking-wider text-accent">
+              Additional Work on GitHub
+            </span>
+            <h2 className="mt-1 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              More Projects
+            </h2>
+          </div>
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href={PROFILE.links.github}
             target="_blank"
             rel="noopener noreferrer"
+            className="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-strong"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            <span>All Repositories</span>
+            <ExternalLink className="h-4 w-4" />
           </a>
         </div>
-      </main>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          {ADDITIONAL_PROJECTS.map((item) => (
+            <a
+              key={item.name}
+              href={item.repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="print-break-avoid group rounded-2xl border border-border bg-surface p-5 transition-all hover:border-slate-300 hover:shadow-sm"
+            >
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <Layers className="h-4 w-4 text-accent" />
+                  <h3 className="text-base font-bold text-foreground group-hover:text-accent transition-colors">
+                    {item.name}
+                  </h3>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-muted">
+                  <span>{item.year}</span>
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </div>
+              </div>
+              <p className="mt-2 text-sm leading-relaxed text-slate-700">
+                {item.description}
+              </p>
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {item.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-md bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-700"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
