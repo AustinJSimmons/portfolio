@@ -303,7 +303,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     slug: 'pcos-diagnostic-dashboard',
     title: 'PCOS Diagnostic & Risk Dashboard',
     shortTitle: 'PCOS Diagnostic Dashboard',
-    subtitle: 'DATA 501 Capstone · Clinical Machine Learning & Explainable Screening App',
+    subtitle: 'DATA 501 Capstone - Clinical Machine Learning & Explainable Screening App',
     status: 'Completed',
     period: 'Apr 2026',
     contextTag: 'Data Science & Applied ML',
@@ -313,7 +313,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     repoUrl: 'https://github.com/AustinJSimmons/pcos-diagnostic-dashboard',
     tags: ['Python', 'XGBoost', 'SHAP', 'K-Means', 'Streamlit', 'pytest'],
     overview:
-      'Built on a clinical dataset of 541 patients (177 PCOS cases, 364 controls) across 41 features—spanning hormonal assays, anthropometric measurements, ultrasound findings, and self-reported symptoms from 10 hospitals in Kerala, India. Rather than stopping at a single accuracy score, the pipeline tests whether non-invasive symptoms and vitals alone can support accessible screening when expensive lab or ultrasound tests are unavailable.',
+      'Built on a clinical dataset of 541 patients (177 PCOS cases, 364 controls) across 41 features—spanning hormonal lifestyle, and ultrasound findings from 10 hospitals in Kerala, India. Rather than stopping at a single accuracy score, the pipeline tests whether non-invasive symptoms and vitals alone can support accessible screening when expensive lab or ultrasound tests are unavailable.',
     audienceTakeaway:
       'Demonstrates statistical rigor (identical 5-fold stratified CV splits + Wilcoxon signed-rank validation), model interpretability (SHAP + LR coefficients), and production-minded delivery (tested multi-page UI).',
     metrics: [
@@ -324,25 +324,25 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     ],
     processSteps: [
       {
-        phase: '01 · Cleaning & EDA',
+        phase: '01 - Cleaning & EDA',
         title: 'Sanitization, Derived Ratios & Statistical Tests',
         description:
           'Notebooks 01–02 clean raw hospital records, recalculate BMI and waist-to-hip ratios, and run t-tests, chi-square tests, and PCA to identify class separation.',
       },
       {
-        phase: '02 · Feature Selection & Phenotypes',
+        phase: '02 - Feature Selection & Phenotypes',
         title: 'Mutual Information & K-Means Subtyping',
         description:
           'Notebooks 03–05 apply mutual information selection, SHAP attribution on tuned XGBoost, and K-Means clustering (k=2) on PCOS patients, surfacing Metabolic vs. Hyperandrogenic subtypes.',
       },
       {
-        phase: '03 · Rigorous Benchmarking',
+        phase: '03 - Rigorous Benchmarking',
         title: 'Identical CV Splits & Screening Context Analysis',
         description:
           'Notebooks 06–08 benchmark XGBoost, Random Forest, LASSO, Ridge, and Logistic Regression on identical 5-fold stratified splits, evaluating sensitivity, specificity, PPV, and NPV across full vs. low-cost screening contexts.',
       },
       {
-        phase: '04 · Interactive Delivery',
+        phase: '04 - Interactive Delivery',
         title: '3-Page Tested Streamlit Application',
         description:
           'Ships Phenotype Explorer, Risk Calculator (full clinical or non-invasive mode), and Feature Impact pages backed by automated dashboard tests in tests/test_dashboard.py.',
@@ -370,20 +370,16 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     ],
     contributions: {
       items: [
-        '[Placeholder: Specify which notebooks (01–08) or modeling/clustering sections you owned]',
-        '[Placeholder: Specify your role in building the Streamlit dashboard pages or pytest suite]',
-        'Co-authored reproducible analysis workflow and model evaluation criteria across the capstone team.',
+        'All EDA and initial modeling/clustering',
+        'Built out the ML model evaluation pipeline with Grid Search for hyperparameter optimization and feature importance analysis',
+        'Co-authored the streamlit dashboard',
       ],
-      placeholderNote:
-        'Replace the first two bullets above with the exact notebooks, models, or UI pages you built.',
     },
     skillsDemonstrated: [
       'Supervised ML Benchmarking',
       'SHAP & Model Explainability',
       'Unsupervised Clustering (K-Means)',
-      'Non-Parametric Hypothesis Testing',
-      'Streamlit App Engineering',
-      'Automated Testing (pytest)',
+      'Non-Parametric Hypothesis Testing'
     ],
   },
   // EDIT [Projects (/projects) Card 02 + /projects/sim-gpu]:
@@ -391,21 +387,21 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     slug: 'sim-gpu',
     title: 'sim-gpu: C++ & SystemC GPU Simulator',
     shortTitle: 'sim-gpu Simulator',
-    subtitle: 'Ongoing Systems Project · Hardware Architecture, Custom ISA & Verification',
+    subtitle: 'Ongoing Systems Project - Hardware Architecture, Custom ISA & Verification',
     status: 'Ongoing',
     period: 'Jul 2026 – Present',
     contextTag: 'Systems & Low-Level Architecture',
     summary:
       'From-scratch functional GPU simulator in C++ and SystemC inspired by tiny-gpu, complete with custom architecture diagrams, instruction bit-field layouts, and verified ALU/FPU execution units.',
-    headlineMetric: 'C++ / SystemC · ALU & FPU Tested · Custom ISA',
+    headlineMetric: 'C++ / SystemC - ALU & FPU Tested - Custom ISA',
     repoUrl: 'https://github.com/AustinJSimmons/sim-gpu',
     relatedBlogSlug: 'sim-gpu-pt0',
     relatedBlogTitle: 'Read SIM-GPU Devlog',
     tags: ['C++', 'SystemC', 'Computer Architecture', 'ISA Design', 'Digital Logic'],
     overview:
-      'Inspired by tiny-gpu, sim-gpu is a self-directed engineering project to design and simulate a GPU from the ground up in C++ and SystemC. Each subsystem is documented around three core questions—what it does, its component parts, and why a GPU needs it—before implementing and functionally verifying modules prior to introducing cycle-accurate timing.',
+      'Inspired by tiny-gpu, sim-gpu is a self-directed project to design and simulate a GPU from the ground up in C++ using SystemC. Each subsystem is documented around three core questions, what it does, its component parts, and why a GPU needs it, before implementing and functionally verifying modules prior to introducing cycle-accurate timing.',
     audienceTakeaway:
-      'Shows low-level hardware literacy, disciplined verification-first engineering (testing ALU & FPU in SystemC before scaling up), and systems intuition relevant to embedded, performance, and hardware security roles.',
+      'Shows low-level hardware literacy, and systems intuition relevant to embedded, firmware, and related roles',
     metrics: [
       { label: 'Core Stack', value: 'C++ / SystemC', detail: 'Hardware-level module simulation' },
       { label: 'Verified Modules', value: 'ALU & FPU', detail: 'Functional SystemC testbenches passing' },
@@ -414,25 +410,25 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     ],
     processSteps: [
       {
-        phase: '01 · Architecture Blueprinting',
+        phase: '01 - Architecture Blueprinting',
         title: 'High-Level GPU & Compute Unit Mapping',
         description:
           'Authored light/dark SVG architecture diagrams mapping the global scheduler, L2/memory controller, compute units, control unit pipeline, register file, and L1 cache.',
       },
       {
-        phase: '02 · ISA Specification',
+        phase: '02 - ISA Specification',
         title: 'S-Type, M-Type & C-Type Instruction Formats',
         description:
-          'Defined custom bit-field layouts using WaveDrom SVGs—covering 3-register arithmetic/MOV operations (M-Type) and predicated instruction-cache jumps (C-Type).',
+          'Defined custom bit-field layouts using WaveDrom SVGs, covering 3-register arithmetic/MOV operations (M-Type) and predicated instruction-cache jumps (C-Type).',
       },
       {
-        phase: '03 · Functional Verification',
+        phase: '03 - Functional Verification',
         title: 'SystemC Testbenches for Processing Elements',
         description:
-          'Built SystemC simulation harnesses and functionally verified the Processing Element ALU and FPU prior to adding cycle-timing complexity.',
+          'Built SystemC simulation harnesses and functionally verified the Processing Element ALU and FPU.',
       },
       {
-        phase: '04 · Next Up (Ongoing)',
+        phase: '04 - Next Up (Ongoing)',
         title: 'Memory Subsystem, Control Unit & Cycle Timing',
         description:
           'Implementing the Load/Store Unit (LSU), Instruction Cache, Decoder, Register File, Warp Scheduler, and finally transitioning from functional simulation to cycle-accurate timing.',
@@ -443,7 +439,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
         challenge:
           'Managing simulation complexity when learning GPU microarchitecture and SystemC simultaneously.',
         solution:
-          'Explicitly separated the roadmap into a functional-simulation phase first (verifying ALU/FPU behavior in isolation) before attempting cycle-accurate timing across caches and warp schedulers.',
+          'Separated the roadmap into a functional-simulation phase first (verifying ALU/FPU behavior in isolation) before attempting cycle-accurate timing across caches and warp schedulers.',
       },
       {
         challenge:
@@ -472,100 +468,98 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     slug: 'dealership-workflow-automation',
     title: 'Dealership Intake & Workflow Automation',
     shortTitle: 'Dealership Apps Script',
-    subtitle: 'Ongoing Client Project · Google Sheets & Google Apps Script Form Pipeline',
+    subtitle: 'Ongoing Project - Google Sheets & Google Apps Script',
     status: 'Ongoing',
-    period: 'Ongoing · Real-World Build',
-    contextTag: 'Workflow Automation & Data Integrity',
+    period: 'August 2026 - Present',
+    contextTag: 'Workflow Automation and business logic',
     summary:
       'Custom Google Sheets and Google Apps Script intake form and operational workflow built for a local Dodge dealership to standardize data entry and eliminate manual tracking errors.',
-    headlineMetric: '[Placeholder: Hours Saved / Error Reduction]',
+    headlineMetric: 'Streamlining interdepartment workflows through tooling',
     tags: ['Google Apps Script', 'JavaScript', 'Google Sheets', 'Data Validation', 'Workflow Design'],
     overview:
-      '[Placeholder: Replace with 3–4 sentences describing the exact workflow bottleneck at the Dodge dealership (e.g., vehicle check-in, service/sales intake, inventory or commission tracking), who uses the tool daily, and what the form + spreadsheet pipeline automates.]',
+      'I noticed recurring issues at a dodge dealership where my fiance works as a delivery coordinator. Namely, poor communication between departments and missing information leading to missed deliveries and delays. I then desinged and implemented a solution using Google Apps Script and Google Sheets to ',
     audienceTakeaway:
-      'Demonstrates pragmatic engineering for non-technical end users: enforcing data quality at input, automating repetitive spreadsheet work, and building guardrails against human error.',
+      'Demonstrates pragmatic development for non-technical end users: enforcing data quality at input, automating repetitive spreadsheet work, and building guardrails against human error.',
     metrics: [
       {
         label: 'Primary Platform',
-        value: 'Sheets + Script',
+        value: 'Google Sheets + Google Apps Script',
         detail: 'Zero-infrastructure deployment on Google Workspace',
       },
       {
         label: 'Workflow Impact',
-        value: '[Placeholder]',
-        detail: 'e.g., X mins saved per intake / Y records processed',
+        value: 'Reduced missed appointments and reduced time spent on manual data entry',
+        detail: 'User reported success',
       },
       {
         label: 'Data Integrity',
-        value: '[Placeholder]',
-        detail: 'Automated validation, formatting & status triggers',
+        value: 'Increased accountability and reduced errors',
+        detail: 'Standardized input fields, formatting, and status tracking',
       },
       {
         label: 'Project Status',
         value: 'Ongoing',
-        detail: 'Iterating directly with dealership staff feedback',
+        detail: 'Improvements based on user feedback',
       },
     ],
     processSteps: [
       {
-        phase: '01 · Discovery',
+        phase: '01 - Discovery',
         title: 'Mapping the Dealership Paper/Spreadsheet Bottleneck',
         description:
-          '[Placeholder: Describe how staff previously tracked entries and where manual errors, duplicates, or missing fields occurred.]',
-        isPlaceholder: true,
+          'The previous system for tracking deliveries relied on Google Calendar and emails to communicate between departments, leading to communication breakdowns between departments, missed appointments, and delays. Staff would inconsistently enter information, causing confusion and errors. The delivery coordinator was responsible for following up with multiple departments to ensure vehicles were ready for customers, which was time-consuming and inefficient.',
+        isPlaceholder: false,
       },
       {
-        phase: '02 · Schema & Input Design',
+        phase: '02 - Schema & Input Design',
         title: 'Structured Intake Form & Normalized Sheet Schema',
         description:
-          '[Placeholder: Describe the form fields, dropdowns, VIN/stock-number formatting rules, or multi-tab sheet layout you designed.]',
-        isPlaceholder: true,
+          'Designed a multi-tab Google Sheet, establishing strict formatting rules and required fields for VINs, stock numbers, and delivery milestones.',
+        isPlaceholder: false,
       },
       {
-        phase: '03 · Apps Script Automation',
+        phase: '03 - Apps Script Automation',
         title: 'Triggers, Validation & Automated Routing',
         description:
-          '[Placeholder: Describe your Apps Script functions—e.g., onFormSubmit / onEdit triggers, timestamping, email/PDF notifications, or status syncing.]',
-        isPlaceholder: true,
+          'Built custom Google Apps Script triggers as well as a online intake form connected to the multi-tab Google Sheet, automating data entry, status tracking, and notifications between departments to streamline the delivery coordination workflow.',
+        isPlaceholder: false,
       },
       {
         phase: '04 · User Rollout & Iteration',
         title: 'Testing with Staff & Ongoing Refinements',
         description:
-          '[Placeholder: Describe what you are currently improving next based on live dealership usage.]',
-        isPlaceholder: true,
+          'Collaborating with the delivery coordinator to gather feedback and identify areas for improvement.',
+        isPlaceholder: false,
       },
     ],
     challenges: [
       {
         challenge:
-          '[Placeholder: Challenge #1 — e.g., handling concurrent edits, Apps Script trigger permissions/quotas, or inconsistent staff inputs like VINs/dates]',
+          'Identifying the root cause of the problem',
         solution:
-          '[Placeholder: How you solved it — e.g., LockService, input regex/validation rules, protected ranges, or idempotent script triggers]',
-        isPlaceholder: true,
+          'Through observation and discussion with the delivery coordinator and other staff, as well as looking into the communication and workflows between departments, I identified that communication breakdowns and inconsistently entered information were the root causes of delays and errors in the delivery process.',
+        isPlaceholder: false,
       },
       {
         challenge:
-          '[Placeholder: Challenge #2 — e.g., designing an interface non-technical staff could use quickly without breaking formulas]',
+          'Designing an interface that was intuitive for non-technical staff',
         solution:
-          '[Placeholder: How you solved it — e.g., separating raw intake log from formatted dashboard views and locking formula columns]',
-        isPlaceholder: true,
+          'Since many departments already used Google Sheets, I opted to use those as a base and built an online form that would populate the google sheet with the required information.',
+        isPlaceholder: false,
       },
     ],
     contributions: {
       items: [
-        'Sole developer & stakeholder liaison: gathered requirements directly from dealership staff.',
-        '[Placeholder: Key Apps Script / Sheet architecture feature you built]',
-        '[Placeholder: Next feature planned before full handoff]',
+        'Sole developer',
+        'Built an online intake form connected to the multi-tab Google Sheet',
+        'Created automations and notifications to streamline the delivery coordination workflow.',
+        'Continuously improving based on user feedback to further improve the system.',
       ],
-      placeholderNote:
-        'Replace the [Placeholder] text in src/data/projects.ts (and optionally drop sanitized screenshots into public/images/dealership/).',
     },
     skillsDemonstrated: [
       'Google Apps Script (JS)',
       'Data Schema & Input Validation',
-      'Stakeholder Requirements Gathering',
-      'Defensive Spreadsheet Design',
+      'Business Requirements Gathering',
       'Iterative Deployment',
     ],
   },
