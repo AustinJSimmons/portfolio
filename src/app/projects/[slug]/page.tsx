@@ -61,6 +61,7 @@ export default async function ProjectDetailPage({
 
   return (
     <article className="mx-auto max-w-5xl px-6 py-10 sm:py-14 space-y-12">
+      {/* EDIT [Project Overview (/projects/[slug])]: Shared template for all featured projects. Per-project copy lives in FEATURED_PROJECTS inside src/data/projects.ts; static section labels live below. */}
       {/* Top Breadcrumb */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         <Link
@@ -144,6 +145,7 @@ export default async function ProjectDetailPage({
         ))}
       </section>
 
+      {/* EDIT [Project Overview (/projects/[slug]) — Section Headings]: Shared headings for Overview, Why It Matters, Technical Artifacts, Process, Challenges, & Contributions */}
       {/* Overview & Why It Matters */}
       <section className="grid gap-6 md:grid-cols-3">
         <div className="md:col-span-2 rounded-2xl border border-border bg-surface p-6">

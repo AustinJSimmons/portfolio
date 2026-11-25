@@ -1,6 +1,7 @@
 import { ArrowRight, FileSpreadsheet, ImagePlus, ShieldCheck, Workflow } from 'lucide-react';
 
 export function DealershipPlaceholderPanel() {
+  // EDIT [Project Overview (/projects/dealership-workflow-automation) — Architecture Diagram]: 3-step pipeline cards
   const stages = [
     {
       icon: FileSpreadsheet,
@@ -53,6 +54,7 @@ export function DealershipPlaceholderPanel() {
         </div>
       </div>
 
+      {/* EDIT [Project Overview (/projects/dealership-workflow-automation) — Screenshot Slot]: Replace with <img> elements once screenshots are saved in public/images/dealership/ */}
       <div className="print-break-avoid rounded-2xl border border-dashed border-amber-500/45 bg-amber-950/15 p-6 text-center">
         <ImagePlus className="mx-auto h-8 w-8 text-amber-400" />
         <h4 className="mt-2 text-base font-bold text-foreground">

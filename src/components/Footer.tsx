@@ -7,6 +7,7 @@ export function Footer() {
   return (
     <footer className="mt-auto border-t border-border bg-surface">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-8 sm:flex-row sm:items-center sm:justify-between">
+        {/* EDIT [Footer — All Pages]: Name, role, and links below come from PROFILE in src/data/projects.ts */}
         <div>
           <p className="text-sm font-semibold text-foreground">{PROFILE.name}</p>
           <p className="text-sm text-muted">{PROFILE.role}</p>

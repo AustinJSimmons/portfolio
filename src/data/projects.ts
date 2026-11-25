@@ -1,3 +1,17 @@
+/*
+ * ============================================================================
+ * PORTFOLIO COPY QUICK GUIDE (Search for "EDIT [" across src/ to find any text)
+ * ============================================================================
+ * - PROFILE.name / role / links  -> Navbar (all pages), Footer (all pages), Overview (/), Resume (/resume)
+ * - PROFILE.experience           -> Overview (/) "Experience & Education" section
+ * - PROFILE.skillGroups          -> Overview (/) "Core Skills" section
+ * - PCOS_MODEL_RESULTS           -> Project Overview: /projects/pcos-diagnostic-dashboard
+ * - SIM_GPU_DIAGRAMS/MILESTONES  -> Project Overview: /projects/sim-gpu
+ * - FEATURED_PROJECTS            -> Projects (/projects) carousel + /projects/<slug> detail pages
+ * - ADDITIONAL_PROJECTS          -> Projects (/projects) "More Projects on GitHub" grid
+ * ============================================================================
+ */
+
 export type ProjectStatus = 'Completed' | 'Ongoing';
 
 export interface MetricItem {
@@ -78,6 +92,7 @@ export interface AdditionalProject {
   year: string;
 }
 
+// EDIT [All Pages — Overview (/), Navbar, Footer, Resume (/resume)]: Core identity, contact links, and PDF path
 export const PROFILE = {
   name: 'Austin Simmons',
   role: 'Data Science & Systems-Minded Engineer',
@@ -90,8 +105,9 @@ export const PROFILE = {
     github: 'https://github.com/AustinJSimmons',
     linkedin: 'https://www.linkedin.com/in/austin-simmons-77953322a/',
     email: 'austinsimmons098@gmail.com',
-    resume: '/Austin_resume_web_version.pdf',
+    resume: '/Austin_resume_web_version.pdf', // File in public/Austin_resume_web_version.pdf
   },
+  // EDIT [Overview (/) — "Experience & Education" section]: Work history & degree cards
   experience: [
     {
       title: 'Embedded Firmware Developer',
@@ -129,6 +145,7 @@ export const PROFILE = {
       isPlaceholder: false,
     },
   ],
+  // EDIT [Overview (/) — "Core Skills" section]: 4 skill category groups
   skillGroups: [
     {
       category: 'Data Science & ML',
@@ -175,6 +192,7 @@ export const PROFILE = {
   ],
 };
 
+// EDIT [Project Overview (/projects/pcos-diagnostic-dashboard) — Benchmark Table]: Model CV AUC scores & notes
 export const PCOS_MODEL_RESULTS: PcosModelResult[] = [
   {
     model: 'XGBoost',
@@ -218,6 +236,7 @@ export const PCOS_MODEL_RESULTS: PcosModelResult[] = [
   },
 ];
 
+// EDIT [Project Overview (/projects/sim-gpu) — Diagram Explorer]: SVG tabs, file paths in public/images/sim-gpu/, & captions
 export const SIM_GPU_DIAGRAMS: SimGpuDiagram[] = [
   {
     id: 'high-level',
@@ -265,6 +284,7 @@ export const SIM_GPU_DIAGRAMS: SimGpuDiagram[] = [
   },
 ];
 
+// EDIT [Project Overview (/projects/sim-gpu) — Roadmap Checklist]: Completed vs. upcoming SystemC milestones
 export const SIM_GPU_MILESTONES: SimGpuMilestone[] = [
   { group: 'Foundation', label: 'SystemC functional testbench & module testing', done: true },
   { group: 'Processing Element', label: 'ALU simulated & functionally tested', done: true },
@@ -276,7 +296,9 @@ export const SIM_GPU_MILESTONES: SimGpuMilestone[] = [
   { group: 'Timing', label: 'Cycle-accurate simulation pass', done: false },
 ];
 
+// EDIT [Projects (/projects) Carousel + /projects/<slug> Overview Pages]: Add, reorder, or edit featured projects here
 export const FEATURED_PROJECTS: FeaturedProject[] = [
+  // EDIT [Projects (/projects) Card 01 + /projects/pcos-diagnostic-dashboard]:
   {
     slug: 'pcos-diagnostic-dashboard',
     title: 'PCOS Diagnostic & Risk Dashboard',
@@ -364,6 +386,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
       'Automated Testing (pytest)',
     ],
   },
+  // EDIT [Projects (/projects) Card 02 + /projects/sim-gpu]:
   {
     slug: 'sim-gpu',
     title: 'sim-gpu: C++ & SystemC GPU Simulator',
@@ -444,6 +467,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
       'Technical Architecture Diagramming',
     ],
   },
+  // EDIT [Projects (/projects) Card 03 + /projects/dealership-workflow-automation]: Replace [Placeholder] fields below
   {
     slug: 'dealership-workflow-automation',
     title: 'Dealership Intake & Workflow Automation',
@@ -547,6 +571,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
   },
 ];
 
+// EDIT [Projects (/projects) — "More Projects on GitHub" grid]: Compact GitHub repo cards
 export const ADDITIONAL_PROJECTS: AdditionalProject[] = [
   {
     name: '482FinalDashboard',

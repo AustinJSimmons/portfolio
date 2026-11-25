@@ -19,6 +19,7 @@ export default function ResumePage() {
         <span>Back to Overview</span>
       </Link>
 
+      {/* EDIT [Resume (/resume) — Header & PDF Source]: Page title/subtitle & download filename; PDF file path is PROFILE.links.resume in src/data/projects.ts (public/Austin_resume_web_version.pdf) */}
       <header className="flex flex-col gap-5 border-b border-border pb-6 sm:flex-row sm:items-end sm:justify-between">
         <div className="space-y-2">
           <span className="font-mono text-xs font-semibold uppercase tracking-wider text-accent">

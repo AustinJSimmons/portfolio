@@ -14,6 +14,7 @@ export default function BlogIndexPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-12 sm:py-16 space-y-12">
+      {/* EDIT [Blog (/blog) — Header]: Page eyebrow, title & subtitle; individual posts are Markdown files in content/blog/*.md */}
       <header className="space-y-3 border-b border-border pb-8">
         <span className="font-mono text-xs font-semibold uppercase tracking-widest text-accent">
           Engineering Notes &amp; Devlogs

@@ -6,7 +6,7 @@ import { PROFILE } from '@/data/projects';
 export default function OverviewPage() {
   return (
     <div className="mx-auto max-w-4xl px-6 py-12 sm:py-16 space-y-16">
-      {/* Intro / Bio */}
+      {/* EDIT [Overview (/) — Intro / Hero]: Location, role & name come from PROFILE in src/data/projects.ts; bio paragraph & CTAs below are editable here */}
       <section className="space-y-6">
         <p className="font-mono text-xs font-semibold uppercase tracking-widest text-accent">
           {PROFILE.location} · {PROFILE.role}
@@ -16,6 +16,7 @@ export default function OverviewPage() {
           {PROFILE.name}
         </h1>
 
+        {/* EDIT [Overview (/) — Intro Bio Paragraph]: Main summary paragraph */}
         <p className="max-w-3xl text-lg leading-relaxed text-zinc-300">
           I&apos;m a data science student who enjoys working across abstraction layers—from statistical modeling and explainable machine learning down to C++/SystemC hardware simulation, embedded systems, and practical automation. I&apos;m currently exploring security-focused engineering where low-level systems literacy and data analysis intersect.
         </p>
@@ -68,7 +69,7 @@ export default function OverviewPage() {
 
       <hr className="border-border" />
 
-      {/* Experience & Education */}
+      {/* EDIT [Overview (/) — Experience & Education]: Heading below; cards come from PROFILE.experience in src/data/projects.ts */}
       <section className="space-y-6">
         <h2 className="neon-heading text-2xl font-bold tracking-tight">
           Experience &amp; Education
@@ -126,7 +127,7 @@ export default function OverviewPage() {
 
       <hr className="border-border" />
 
-      {/* Compact Skills */}
+      {/* EDIT [Overview (/) — Core Skills]: Heading below; skill groups come from PROFILE.skillGroups in src/data/projects.ts */}
       <section className="space-y-6">
         <h2 className="neon-heading text-2xl font-bold tracking-tight">
           Core Skills
@@ -148,7 +149,7 @@ export default function OverviewPage() {
 
       <hr className="border-border" />
 
-      {/* Direction */}
+      {/* EDIT [Overview (/) — Bottom Direction Section]: Heading & closing summary paragraph */}
       <section className="space-y-3">
         <h2 className="neon-heading text-xl font-bold tracking-tight">
           Where Data, Systems &amp; Security Meet

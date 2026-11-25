@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-12 sm:py-16 space-y-20">
-      {/* Featured Projects Carousel */}
+      {/* EDIT [Projects (/projects) — Featured Carousel]: Header text below; carousel cards come from FEATURED_PROJECTS in src/data/projects.ts */}
       <section className="space-y-6">
         <div className="space-y-2">
           <span className="font-mono text-xs font-semibold uppercase tracking-widest text-accent">
@@ -34,7 +34,7 @@ export default function ProjectsPage() {
 
       <hr className="border-border" />
 
-      {/* More Projects */}
+      {/* EDIT [Projects (/projects) — More Projects Grid]: Header text below; repo cards come from ADDITIONAL_PROJECTS in src/data/projects.ts */}
       <section className="space-y-6">
         <div className="flex items-center justify-between gap-4">
           <div>

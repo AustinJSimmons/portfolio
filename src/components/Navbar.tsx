@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { PROFILE } from '@/data/projects';
 
+// EDIT [Navbar — All Pages]: Top-right navigation button labels & routes (brand name comes from PROFILE.name)
 const NAV_ITEMS = [
   { label: 'Overview', href: '/', match: (p: string) => p === '/' },
   { label: 'Projects', href: '/projects', match: (p: string) => p.startsWith('/projects') },
