@@ -12,7 +12,7 @@ export function Footer() {
           <p className="text-sm text-muted">{PROFILE.role}</p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-4 text-sm font-medium text-muted">
+        <div className="flex flex-wrap items-center gap-5 text-sm font-medium text-muted">
           <a
             href={PROFILE.links.github}
             target="_blank"
@@ -39,17 +39,17 @@ export function Footer() {
             <span>{PROFILE.links.email}</span>
           </a>
           <Link
+            href="/projects"
+            className="transition-colors hover:text-accent"
+          >
+            Projects
+          </Link>
+          <Link
             href="/resume"
-            className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
+            className="inline-flex items-center gap-1.5 transition-colors hover:text-accent"
           >
             <FileText className="h-4 w-4" />
             <span>Resume</span>
-          </Link>
-          <Link
-            href="/about"
-            className="text-accent hover:text-accent-strong transition-colors"
-          >
-            Bio &amp; Experience →
           </Link>
         </div>
       </div>

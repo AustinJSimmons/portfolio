@@ -21,7 +21,7 @@ export function DealershipPlaceholderPanel() {
 
   return (
     <div className="space-y-6">
-      <div className="print-break-avoid rounded-2xl border border-border bg-surface p-6 shadow-xs">
+      <div className="print-break-avoid rounded-2xl border border-border bg-surface p-6">
         <span className="font-mono text-xs font-semibold uppercase tracking-wider text-accent">
           Workflow Architecture (Template)
         </span>
@@ -35,17 +35,17 @@ export function DealershipPlaceholderPanel() {
             return (
               <div
                 key={stage.title}
-                className="relative rounded-xl border border-dashed border-amber-400 bg-amber-50/40 p-4"
+                className="relative rounded-xl border border-dashed border-amber-500/45 bg-amber-950/15 p-4"
               >
                 <div className="flex items-center gap-2 text-sm font-bold text-foreground">
                   <Icon className="h-4 w-4 text-accent" />
                   <span>{stage.title}</span>
                 </div>
-                <p className="mt-2 text-sm leading-relaxed text-slate-700">
+                <p className="mt-2 text-sm leading-relaxed text-zinc-300">
                   {stage.detail}
                 </p>
                 {idx < stages.length - 1 && (
-                  <ArrowRight className="hidden md:block absolute -right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted bg-surface rounded-full" />
+                  <ArrowRight className="hidden md:block absolute -right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 rounded-full bg-surface text-muted" />
                 )}
               </div>
             );
@@ -53,18 +53,18 @@ export function DealershipPlaceholderPanel() {
         </div>
       </div>
 
-      <div className="print-break-avoid rounded-2xl border border-dashed border-amber-400 bg-amber-50/30 p-6 text-center">
-        <ImagePlus className="mx-auto h-8 w-8 text-amber-700" />
+      <div className="print-break-avoid rounded-2xl border border-dashed border-amber-500/45 bg-amber-950/15 p-6 text-center">
+        <ImagePlus className="mx-auto h-8 w-8 text-amber-400" />
         <h4 className="mt-2 text-base font-bold text-foreground">
           Screenshot Slot (Sanitized Dealership UI / Sheet View)
         </h4>
-        <p className="mx-auto mt-1 max-w-xl text-sm text-slate-700">
+        <p className="mx-auto mt-1 max-w-xl text-sm text-zinc-300">
           Save anonymized screenshots (with any customer PII or sensitive dealer figures blurred) in{' '}
-          <code className="rounded bg-white px-1.5 py-0.5 font-mono text-xs ring-1 ring-amber-300">
+          <code className="rounded bg-background px-1.5 py-0.5 font-mono text-xs text-amber-200 ring-1 ring-amber-500/35">
             public/images/dealership/
           </code>{' '}
           and update{' '}
-          <code className="rounded bg-white px-1.5 py-0.5 font-mono text-xs ring-1 ring-amber-300">
+          <code className="rounded bg-background px-1.5 py-0.5 font-mono text-xs text-amber-200 ring-1 ring-amber-500/35">
             src/data/projects.ts
           </code>.
         </p>

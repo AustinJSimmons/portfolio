@@ -33,6 +33,7 @@ export interface SimGpuDiagram {
   title: string;
   category: 'Architecture' | 'ISA Encoding';
   src: string;
+  canvas: 'light' | 'dark';
   caption: string;
 }
 
@@ -206,6 +207,7 @@ export const SIM_GPU_DIAGRAMS: SimGpuDiagram[] = [
     title: 'High-Level GPU Architecture',
     category: 'Architecture',
     src: '/images/sim-gpu/high-level-gpu.svg',
+    canvas: 'light',
     caption:
       'Top-level GPU layout connecting the host interface, warp/global scheduler, L2 cache, memory controller, and compute units.',
   },
@@ -214,6 +216,7 @@ export const SIM_GPU_DIAGRAMS: SimGpuDiagram[] = [
     title: 'Compute Unit (SM) Internals',
     category: 'Architecture',
     src: '/images/sim-gpu/compute-unit.svg',
+    canvas: 'light',
     caption:
       'Compute Unit microarchitecture showing control unit (instruction cache, decoder, scheduler, dispatcher), register file, L1 cache, and processing elements.',
   },
@@ -221,14 +224,16 @@ export const SIM_GPU_DIAGRAMS: SimGpuDiagram[] = [
     id: 's-type',
     title: 'S-Type Instruction Bitmap',
     category: 'ISA Encoding',
-    src: '/images/sim-gpu/s-type.svg',
+    src: '/images/sim-gpu/s-type-w.svg',
+    canvas: 'dark',
     caption: 'Custom ISA bit-field layout for S-Type instructions.',
   },
   {
     id: 'm-type',
     title: 'M-Type Instruction Bitmap',
     category: 'ISA Encoding',
-    src: '/images/sim-gpu/m-type.svg',
+    src: '/images/sim-gpu/m-type-w.svg',
+    canvas: 'dark',
     caption:
       'M-Type register-to-register instruction layout accessing src1, src2, and rd (including MOV).',
   },
@@ -236,7 +241,8 @@ export const SIM_GPU_DIAGRAMS: SimGpuDiagram[] = [
     id: 'c-type',
     title: 'C-Type Instruction Bitmap',
     category: 'ISA Encoding',
-    src: '/images/sim-gpu/c-type.svg',
+    src: '/images/sim-gpu/c-type-w.svg',
+    canvas: 'dark',
     caption:
       'Control-flow instruction layout using predicates and instruction-cache target addresses.',
   },

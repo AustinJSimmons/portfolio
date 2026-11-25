@@ -14,7 +14,7 @@ export function PcosMetricsTable() {
   );
 
   return (
-    <div className="print-break-avoid rounded-2xl border border-border bg-surface p-6 shadow-xs">
+    <div className="print-break-avoid rounded-2xl border border-border bg-surface p-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-accent">
@@ -28,13 +28,13 @@ export function PcosMetricsTable() {
           </h3>
         </div>
 
-        <div className="inline-flex rounded-xl border border-border bg-slate-100 p-1">
+        <div className="inline-flex rounded-xl border border-border bg-background p-1">
           <button
             type="button"
             onClick={() => setMode('full')}
             className={`rounded-lg px-3.5 py-1.5 text-sm font-semibold transition-all cursor-pointer ${
               mode === 'full'
-                ? 'bg-surface text-foreground shadow-xs'
+                ? 'bg-accent-soft text-accent ring-1 ring-purple-400/35'
                 : 'text-muted hover:text-foreground'
             }`}
           >
@@ -45,7 +45,7 @@ export function PcosMetricsTable() {
             onClick={() => setMode('lowCost')}
             className={`rounded-lg px-3.5 py-1.5 text-sm font-semibold transition-all cursor-pointer ${
               mode === 'lowCost'
-                ? 'bg-surface text-foreground shadow-xs'
+                ? 'bg-accent-soft text-accent ring-1 ring-purple-400/35'
                 : 'text-muted hover:text-foreground'
             }`}
           >
@@ -66,8 +66,8 @@ export function PcosMetricsTable() {
               key={row.model}
               className={`rounded-xl border p-4 transition-colors ${
                 isTop
-                  ? 'border-teal-600/30 bg-accent-soft/50'
-                  : 'border-border/80 bg-slate-50/60'
+                  ? 'border-purple-500/40 bg-accent-soft'
+                  : 'border-border bg-background/70'
               }`}
             >
               <div className="flex flex-wrap items-baseline justify-between gap-2">
@@ -76,7 +76,7 @@ export function PcosMetricsTable() {
                     {row.model}
                   </span>
                   {isTop && (
-                    <span className="rounded-full bg-accent px-2 py-0.5 text-[11px] font-semibold text-white">
+                    <span className="rounded-full bg-accent-strong px-2 py-0.5 text-[11px] font-semibold text-white">
                       Top Mean AUC
                     </span>
                   )}
@@ -86,10 +86,10 @@ export function PcosMetricsTable() {
                 </span>
               </div>
 
-              <div className="mt-2.5 h-2.5 w-full overflow-hidden rounded-full bg-slate-200">
+              <div className="mt-2.5 h-2.5 w-full overflow-hidden rounded-full bg-zinc-800">
                 <div
                   className={`h-full rounded-full transition-all duration-500 ${
-                    isTop ? 'bg-accent' : 'bg-slate-600'
+                    isTop ? 'bg-accent' : 'bg-zinc-500'
                   }`}
                   style={{ width: `${widthPct}%` }}
                 />
@@ -101,7 +101,7 @@ export function PcosMetricsTable() {
         })}
       </div>
 
-      <div className="mt-5 flex items-start gap-2.5 rounded-xl bg-slate-50 px-4 py-3 text-xs leading-relaxed text-slate-700 ring-1 ring-slate-200/80">
+      <div className="mt-5 flex items-start gap-2.5 rounded-xl bg-background/80 px-4 py-3 text-xs leading-relaxed text-zinc-300 ring-1 ring-border">
         <Info className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
         <p>
           <strong>Statistical Finding:</strong> All five classifiers were evaluated on identical 5-fold stratified CV splits. Pairwise differences are statistically non-significant (Wilcoxon signed-rank test, Bonferroni-corrected), demonstrating that simpler linear models remain competitive with tree ensembles here.

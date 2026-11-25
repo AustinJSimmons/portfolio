@@ -12,7 +12,7 @@ export function ChallengeCallout({
     <div
       className={`print-break-avoid rounded-2xl border p-5 ${
         item.isPlaceholder
-          ? 'border-dashed border-amber-400 bg-amber-50/40'
+          ? 'border-dashed border-amber-500/50 bg-amber-950/15'
           : 'border-border bg-surface'
       }`}
     >
@@ -21,7 +21,7 @@ export function ChallengeCallout({
           Challenge #{index + 1}
         </span>
         {item.isPlaceholder && (
-          <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-900">
+          <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-300 ring-1 ring-amber-400/30">
             <AlertTriangle className="h-3 w-3" />
             Placeholder — To Be Updated
           </span>
@@ -29,22 +29,22 @@ export function ChallengeCallout({
       </div>
 
       <div className="mt-3 grid gap-4 md:grid-cols-2">
-        <div className="rounded-xl bg-slate-50 p-4 ring-1 ring-slate-200/70">
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-slate-600">
-            <Wrench className="h-3.5 w-3.5 text-amber-600" />
+        <div className="rounded-xl bg-background/80 p-4 ring-1 ring-border">
+          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-zinc-400">
+            <Wrench className="h-3.5 w-3.5 text-amber-400" />
             <span>Implementation Challenge</span>
           </div>
-          <p className="mt-2 text-[15px] leading-relaxed text-foreground">
+          <p className="mt-2 text-[15px] leading-relaxed text-zinc-200">
             {item.challenge}
           </p>
         </div>
 
-        <div className="rounded-xl bg-accent-soft/70 p-4 ring-1 ring-teal-700/15">
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-accent-strong">
+        <div className="rounded-xl bg-accent-soft p-4 ring-1 ring-purple-500/25">
+          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-accent">
             <CheckCircle2 className="h-3.5 w-3.5 text-accent" />
             <span>Engineering Solution</span>
           </div>
-          <p className="mt-2 text-[15px] leading-relaxed text-foreground">
+          <p className="mt-2 text-[15px] leading-relaxed text-zinc-100">
             {item.solution}
           </p>
         </div>

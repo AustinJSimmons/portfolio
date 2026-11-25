@@ -63,11 +63,11 @@ export default async function ProjectDetailPage({
       {/* Top Breadcrumb */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         <Link
-          href="/"
-          className="no-print inline-flex items-center gap-1.5 text-sm font-medium text-muted hover:text-foreground transition-colors"
+          href="/projects"
+          className="no-print inline-flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-accent"
         >
           <ArrowLeft className="h-4 w-4" />
-          <span>Back to Portfolio Overview</span>
+          <span>Back to Projects</span>
         </Link>
       </div>
 
@@ -81,17 +81,17 @@ export default async function ProjectDetailPage({
           <span className="text-xs font-medium text-muted">{project.period}</span>
         </div>
 
-        <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+        <h1 className="neon-heading text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
           {project.title}
         </h1>
 
-        <p className="text-lg font-medium text-muted">{project.subtitle}</p>
+        <p className="text-lg font-medium text-zinc-300">{project.subtitle}</p>
 
         <div className="flex flex-wrap items-center gap-2 pt-1">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-lg bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-800"
+              className="rounded-lg bg-surface-elevated px-2.5 py-1 text-xs font-semibold text-zinc-200 ring-1 ring-border"
             >
               {tag}
             </span>
@@ -101,7 +101,7 @@ export default async function ProjectDetailPage({
               href={project.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-auto inline-flex items-center gap-1.5 rounded-xl bg-foreground px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-slate-800"
+              className="ml-auto inline-flex items-center gap-1.5 rounded-xl bg-accent-strong px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-purple-400"
             >
               <span>View GitHub Repository</span>
               <ExternalLink className="h-3.5 w-3.5" />
@@ -120,11 +120,11 @@ export default async function ProjectDetailPage({
             <div className="text-xs font-semibold uppercase tracking-wide text-muted">
               {metric.label}
             </div>
-            <div className="mt-1 font-mono text-xl font-bold text-foreground">
+            <div className="mt-1 font-mono text-xl font-bold text-accent">
               {metric.value}
             </div>
             {metric.detail && (
-              <div className="mt-1 text-xs leading-snug text-slate-600">
+              <div className="mt-1 text-xs leading-snug text-zinc-400">
                 {metric.detail}
               </div>
             )}
@@ -132,22 +132,22 @@ export default async function ProjectDetailPage({
         ))}
       </section>
 
-      {/* Overview & Audience Takeaway */}
+      {/* Overview & Why It Matters */}
       <section className="grid gap-6 md:grid-cols-3">
         <div className="md:col-span-2 rounded-2xl border border-border bg-surface p-6">
           <h2 className="text-lg font-bold text-foreground">
             Overview &amp; Problem Context
           </h2>
-          <p className="mt-3 text-base leading-relaxed text-slate-700">
+          <p className="mt-3 text-base leading-relaxed text-zinc-300">
             {project.overview}
           </p>
         </div>
 
-        <div className="rounded-2xl border border-teal-700/20 bg-accent-soft/60 p-6">
-          <h2 className="text-sm font-bold uppercase tracking-wide text-accent-strong">
+        <div className="rounded-2xl border border-purple-500/30 bg-accent-soft p-6">
+          <h2 className="text-sm font-bold uppercase tracking-wide text-accent">
             Why It Matters
           </h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-slate-800">
+          <p className="mt-3 text-[15px] leading-relaxed text-zinc-200">
             {project.audienceTakeaway}
           </p>
         </div>
@@ -155,7 +155,7 @@ export default async function ProjectDetailPage({
 
       {/* Project-Specific Interactive Visuals */}
       <section className="space-y-4">
-        <h2 className="text-2xl font-bold tracking-tight text-foreground">
+        <h2 className="neon-heading text-2xl font-bold tracking-tight">
           Technical Artifacts &amp; Results
         </h2>
         {project.slug === 'pcos-diagnostic-dashboard' && <PcosMetricsTable />}
@@ -167,7 +167,7 @@ export default async function ProjectDetailPage({
 
       {/* Process & Technical Details */}
       <section className="space-y-5">
-        <h2 className="text-2xl font-bold tracking-tight text-foreground">
+        <h2 className="neon-heading text-2xl font-bold tracking-tight">
           Process &amp; Technical Execution
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -176,7 +176,7 @@ export default async function ProjectDetailPage({
               key={step.phase}
               className={`print-break-avoid rounded-2xl border p-5 ${
                 step.isPlaceholder
-                  ? 'border-dashed border-amber-400 bg-amber-50/40'
+                  ? 'border-dashed border-amber-500/50 bg-amber-950/15'
                   : 'border-border bg-surface'
               }`}
             >
@@ -186,7 +186,7 @@ export default async function ProjectDetailPage({
               <h3 className="mt-1.5 text-base font-bold text-foreground">
                 {step.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-700">
+              <p className="mt-2 text-sm leading-relaxed text-zinc-300">
                 {step.description}
               </p>
             </div>
@@ -197,7 +197,7 @@ export default async function ProjectDetailPage({
       {/* Implementation Challenges & Solutions */}
       <section className="space-y-5">
         <div>
-          <h2 className="text-2xl font-bold tracking-tight text-foreground">
+          <h2 className="neon-heading text-2xl font-bold tracking-tight">
             Implementation Challenges &amp; Solutions
           </h2>
           <p className="mt-1 text-sm text-muted">
@@ -226,7 +226,7 @@ export default async function ProjectDetailPage({
             {project.contributions.items.map((item) => (
               <li
                 key={item}
-                className="flex items-start gap-2.5 text-[15px] leading-relaxed text-slate-800"
+                className="flex items-start gap-2.5 text-[15px] leading-relaxed text-zinc-300"
               >
                 <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-accent" />
                 <span>{item}</span>
@@ -235,8 +235,8 @@ export default async function ProjectDetailPage({
           </ul>
 
           {project.contributions.placeholderNote && (
-            <div className="mt-4 flex items-start gap-2.5 rounded-xl border border-dashed border-amber-400 bg-amber-50/60 p-3.5 text-xs leading-relaxed text-amber-950">
-              <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-700" />
+            <div className="mt-4 flex items-start gap-2.5 rounded-xl border border-dashed border-amber-500/50 bg-amber-950/20 p-3.5 text-xs leading-relaxed text-amber-200">
+              <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" />
               <p>{project.contributions.placeholderNote}</p>
             </div>
           )}
@@ -250,7 +250,7 @@ export default async function ProjectDetailPage({
             {project.skillsDemonstrated.map((skill) => (
               <span
                 key={skill}
-                className="rounded-lg bg-accent-soft px-3 py-1.5 text-xs font-semibold text-accent-strong ring-1 ring-teal-700/15"
+                className="rounded-lg bg-accent-soft px-3 py-1.5 text-xs font-semibold text-purple-200 ring-1 ring-purple-400/25"
               >
                 {skill}
               </span>
@@ -264,35 +264,35 @@ export default async function ProjectDetailPage({
         {prevProject ? (
           <Link
             href={`/projects/${prevProject.slug}`}
-            className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-4 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-slate-50"
+            className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-4 py-3 text-sm font-semibold text-foreground transition-colors hover:border-purple-400/50 hover:bg-surface-elevated"
           >
             <ArrowLeft className="h-4 w-4 text-muted" />
             <span>Prev: {prevProject.shortTitle}</span>
           </Link>
         ) : (
           <Link
-            href="/"
-            className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-4 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-slate-50"
+            href="/projects"
+            className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-4 py-3 text-sm font-semibold text-foreground transition-colors hover:border-purple-400/50 hover:bg-surface-elevated"
           >
             <ArrowLeft className="h-4 w-4 text-muted" />
-            <span>Overview</span>
+            <span>All Projects</span>
           </Link>
         )}
 
         {nextProject ? (
           <Link
             href={`/projects/${nextProject.slug}`}
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-foreground px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent-strong px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-purple-400"
           >
             <span>Next: {nextProject.shortTitle}</span>
             <ArrowRight className="h-4 w-4" />
           </Link>
         ) : (
           <Link
-            href="/about"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-foreground px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
+            href="/projects"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent-strong px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-purple-400"
           >
-            <span>About &amp; Experience</span>
+            <span>Back to All Projects</span>
             <ArrowRight className="h-4 w-4" />
           </Link>
         )}

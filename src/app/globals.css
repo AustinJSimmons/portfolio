@@ -1,19 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafafa;
-  --surface: #ffffff;
-  --foreground: #0f172a;
-  --muted: #475569;
-  --border: #e2e8f0;
-  --accent: #0f766e;
-  --accent-strong: #115e59;
-  --accent-soft: #f0fdfa;
+  --background: #09090b;
+  --surface: #111114;
+  --surface-elevated: #18181b;
+  --foreground: #f4f4f5;
+  --muted: #a1a1aa;
+  --border: #27272a;
+  --accent: #c084fc;
+  --accent-strong: #a855f7;
+  --accent-soft: rgba(168, 85, 247, 0.14);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-border: var(--border);
@@ -26,6 +28,7 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
@@ -33,6 +36,11 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   line-height: 1.65;
+}
+
+.neon-heading {
+  color: var(--accent);
+  text-shadow: 0 0 24px rgba(192, 132, 252, 0.28);
 }
 
 /* Clean print styling */
@@ -45,6 +53,11 @@ body {
     background: #ffffff !important;
     color: #000000 !important;
     font-size: 11pt !important;
+  }
+
+  .neon-heading {
+    color: #000000 !important;
+    text-shadow: none !important;
   }
 
   .no-print {

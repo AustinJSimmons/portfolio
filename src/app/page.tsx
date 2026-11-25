@@ -1,224 +1,161 @@
 import Link from 'next/link';
-import {
-  ArrowRight,
-  ExternalLink,
-  FileText,
-  Layers,
-  Mail,
-  MapPin,
-  Shield,
-} from 'lucide-react';
+import { ArrowRight, FileText, Mail } from 'lucide-react';
 import { GitHubIcon, LinkedInIcon } from '@/components/Icons';
-import {
-  ADDITIONAL_PROJECTS,
-  FEATURED_PROJECTS,
-  PROFILE,
-} from '@/data/projects';
-import { ProjectCard } from '@/components/ProjectCard';
+import { PROFILE } from '@/data/projects';
 
-export default function HomePage() {
+export default function OverviewPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-12 sm:py-16 space-y-20">
-      {/* Hero Section */}
+    <div className="mx-auto max-w-4xl px-6 py-12 sm:py-16 space-y-16">
+      {/* Intro / Bio */}
       <section className="space-y-6">
-        <div className="inline-flex items-center gap-2 rounded-full border border-teal-700/20 bg-accent-soft px-3.5 py-1 text-xs font-semibold text-accent-strong">
-          <MapPin className="h-3.5 w-3.5" />
-          <span>{PROFILE.location} · Open to Internships &amp; New Grad Roles</span>
+        <p className="font-mono text-xs font-semibold uppercase tracking-widest text-accent">
+          {PROFILE.location} · {PROFILE.role}
+        </p>
+
+        <h1 className="neon-heading text-4xl font-extrabold tracking-tight sm:text-5xl">
+          {PROFILE.name}
+        </h1>
+
+        <p className="max-w-3xl text-lg leading-relaxed text-zinc-300">
+          I&apos;m a data science student who enjoys working across abstraction layers—from statistical modeling and explainable machine learning down to C++/SystemC hardware simulation, embedded systems, and practical automation. I&apos;m currently exploring security-focused engineering where low-level systems literacy and data analysis intersect.
+        </p>
+
+        <div className="no-print flex flex-wrap items-center gap-3 pt-1">
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2 rounded-xl bg-accent-strong px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-purple-500/20 transition-colors hover:bg-purple-400"
+          >
+            <span>Explore Projects</span>
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+          <Link
+            href="/resume"
+            className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-purple-400/50 hover:bg-surface-elevated"
+          >
+            <FileText className="h-4 w-4 text-accent" />
+            <span>View Resume</span>
+          </Link>
         </div>
 
-        <div className="max-w-4xl space-y-4">
-          <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-[54px] lg:leading-[1.1]">
-            {PROFILE.role}
-          </h1>
-          <p className="text-lg leading-relaxed text-muted sm:text-xl">
-            {PROFILE.tagline}
-          </p>
-        </div>
-
-        <div className="rounded-2xl border border-border bg-surface p-5 sm:p-6">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div className="space-y-1">
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-accent">
-                <Shield className="h-3.5 w-3.5" />
-                <span>Focus Areas</span>
-              </div>
-              <p className="text-sm sm:text-base font-medium text-foreground">
-                {PROFILE.focusSummary}
-              </p>
-            </div>
-
-            <div className="no-print flex flex-wrap items-center gap-3 shrink-0">
-              <Link
-                href="#featured-projects"
-                className="inline-flex items-center gap-2 rounded-xl bg-foreground px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
-              >
-                <span>Explore Projects</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/resume"
-                className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-slate-50"
-              >
-                <FileText className="h-4 w-4 text-accent" />
-                <span>Resume</span>
-              </Link>
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-slate-50"
-              >
-                <span>Experience &amp; Bio</span>
-              </Link>
-            </div>
-          </div>
-
-          <div className="mt-4 flex flex-wrap items-center gap-5 border-t border-border/80 pt-4 text-sm font-medium text-muted">
-            <a
-              href={PROFILE.links.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
-            >
-              <GitHubIcon className="h-4 w-4" />
-              <span>github.com/AustinJSimmons</span>
-            </a>
-            <a
-              href={PROFILE.links.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
-            >
-              <LinkedInIcon className="h-4 w-4" />
-              <span>LinkedIn</span>
-            </a>
-            <a
-              href={`mailto:${PROFILE.links.email}`}
-              className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
-            >
-              <Mail className="h-4 w-4" />
-              <span>{PROFILE.links.email}</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Projects */}
-      <section id="featured-projects" className="space-y-6 scroll-mt-24">
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <span className="font-mono text-xs font-semibold uppercase tracking-wider text-accent">
-              Selected Work
-            </span>
-            <h2 className="mt-1 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-              Featured Project Overviews
-            </h2>
-          </div>
-          <p className="max-w-md text-sm text-muted">
-            Structured around technical process, implementation challenges, personal contributions, and verified outcomes.
-          </p>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-3">
-          {FEATURED_PROJECTS.map((project, index) => (
-            <ProjectCard key={project.slug} project={project} index={index} />
-          ))}
-        </div>
-      </section>
-
-      {/* Skills & Competencies Matrix */}
-      <section className="space-y-6">
-        <div>
-          <span className="font-mono text-xs font-semibold uppercase tracking-wider text-accent">
-            Core Capabilities
-          </span>
-          <h2 className="mt-1 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            Skills &amp; Technical Stack
-          </h2>
-        </div>
-
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {PROFILE.skillGroups.map((group) => (
-            <div
-              key={group.category}
-              className="print-break-avoid rounded-2xl border border-border bg-surface p-5"
-            >
-              <h3 className="text-sm font-bold uppercase tracking-wide text-foreground">
-                {group.category}
-              </h3>
-              <ul className="mt-3 space-y-2">
-                {group.skills.map((skill) => (
-                  <li
-                    key={skill}
-                    className="flex items-start gap-2 text-sm text-slate-700"
-                  >
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <span>{skill}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Additional GitHub Projects */}
-      <section className="space-y-6">
-        <div className="flex items-center justify-between gap-4">
-          <div>
-            <span className="font-mono text-xs font-semibold uppercase tracking-wider text-accent">
-              Additional Work on GitHub
-            </span>
-            <h2 className="mt-1 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-              More Projects
-            </h2>
-          </div>
+        <div className="flex flex-wrap items-center gap-6 pt-2 text-sm font-medium text-muted">
           <a
             href={PROFILE.links.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-strong"
+            className="inline-flex items-center gap-2 transition-colors hover:text-accent"
           >
-            <span>All Repositories</span>
-            <ExternalLink className="h-4 w-4" />
+            <GitHubIcon className="h-4 w-4" />
+            <span>GitHub</span>
+          </a>
+          <a
+            href={PROFILE.links.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 transition-colors hover:text-accent"
+          >
+            <LinkedInIcon className="h-4 w-4" />
+            <span>LinkedIn</span>
+          </a>
+          <a
+            href={`mailto:${PROFILE.links.email}`}
+            className="inline-flex items-center gap-2 transition-colors hover:text-accent"
+          >
+            <Mail className="h-4 w-4" />
+            <span>{PROFILE.links.email}</span>
           </a>
         </div>
+      </section>
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          {ADDITIONAL_PROJECTS.map((item) => (
-            <a
-              key={item.name}
-              href={item.repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="print-break-avoid group rounded-2xl border border-border bg-surface p-5 transition-all hover:border-slate-300 hover:shadow-sm"
+      <hr className="border-border" />
+
+      {/* Experience & Education */}
+      <section className="space-y-6">
+        <h2 className="neon-heading text-2xl font-bold tracking-tight">
+          Experience &amp; Education
+        </h2>
+
+        <div className="space-y-4">
+          {PROFILE.experience.map((item) => (
+            <div
+              key={item.title}
+              className={`print-break-avoid rounded-2xl border p-6 ${
+                item.isPlaceholder
+                  ? 'border-dashed border-amber-500/45 bg-amber-950/15'
+                  : 'border-border bg-surface'
+              }`}
             >
-              <div className="flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2">
-                  <Layers className="h-4 w-4 text-accent" />
-                  <h3 className="text-base font-bold text-foreground group-hover:text-accent transition-colors">
-                    {item.name}
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <div>
+                  <h3 className="text-lg font-bold text-foreground">
+                    {item.title}
                   </h3>
+                  <p className="text-sm font-medium text-muted">
+                    {item.organization}
+                  </p>
                 </div>
-                <div className="flex items-center gap-2 text-xs text-muted">
-                  <span>{item.year}</span>
-                  <ExternalLink className="h-3.5 w-3.5" />
-                </div>
+                <span className="font-mono text-xs font-semibold text-accent">
+                  {item.period}
+                </span>
               </div>
-              <p className="mt-2 text-sm leading-relaxed text-slate-700">
-                {item.description}
-              </p>
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {item.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-md bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-700"
+
+              <ul className="mt-4 space-y-2">
+                {item.highlights.map((bullet) => (
+                  <li
+                    key={bullet}
+                    className="flex items-start gap-2.5 text-[15px] text-zinc-300"
                   >
-                    {tag}
-                  </span>
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                    <span>{bullet}</span>
+                  </li>
                 ))}
-              </div>
-            </a>
+              </ul>
+
+              {item.isPlaceholder && (
+                <p className="mt-4 text-xs font-medium text-amber-300">
+                  Update your Embedded Systems Internship details in{' '}
+                  <code className="rounded bg-background px-1.5 py-0.5 font-mono text-amber-200">
+                    src/data/projects.ts
+                  </code>
+                  .
+                </p>
+              )}
+            </div>
           ))}
         </div>
+      </section>
+
+      <hr className="border-border" />
+
+      {/* Compact Skills */}
+      <section className="space-y-6">
+        <h2 className="neon-heading text-2xl font-bold tracking-tight">
+          Core Skills
+        </h2>
+
+        <div className="grid gap-6 sm:grid-cols-2">
+          {PROFILE.skillGroups.map((group) => (
+            <div key={group.category} className="space-y-2">
+              <h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-zinc-200">
+                {group.category}
+              </h3>
+              <p className="text-sm leading-relaxed text-muted">
+                {group.skills.join(' · ')}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <hr className="border-border" />
+
+      {/* Direction */}
+      <section className="space-y-3">
+        <h2 className="neon-heading text-xl font-bold tracking-tight">
+          Where Data, Systems &amp; Security Meet
+        </h2>
+        <p className="text-[15px] leading-relaxed text-zinc-300">
+          My prior embedded internship and ongoing C++/SystemC GPU simulator give me comfort below the Python abstraction layer, while my capstone and data engineering coursework train me to validate claims statistically. Together, that combination translates directly to detection engineering, telemetry analytics, and security-minded systems development.
+        </p>
       </section>
     </div>
   );
