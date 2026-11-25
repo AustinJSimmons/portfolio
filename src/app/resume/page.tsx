@@ -23,7 +23,7 @@ export default function ResumePage() {
       <header className="flex flex-col gap-5 border-b border-border pb-6 sm:flex-row sm:items-end sm:justify-between">
         <div className="space-y-2">
           <span className="font-mono text-xs font-semibold uppercase tracking-wider text-accent">
-            Curriculum Vitae
+            CV
           </span>
           <h1 className="neon-heading text-3xl font-extrabold tracking-tight sm:text-4xl">
             {PROFILE.name} — Resume
