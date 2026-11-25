@@ -6,7 +6,7 @@ import { PROFILE } from '@/data/projects';
 
 export const metadata: Metadata = {
   title: 'Blog',
-  description: `Engineering notes and devlogs by ${PROFILE.name} on GPU architecture, systems, and data science.`,
+  description: `Technical notes and devlogs by ${PROFILE.name} on GPU architecture, systems, and data science.`,
 };
 
 export default function BlogIndexPage() {
@@ -17,7 +17,7 @@ export default function BlogIndexPage() {
       {/* EDIT [Blog (/blog) — Header]: Page eyebrow, title & subtitle; individual posts are Markdown files in content/blog/*.md */}
       <header className="space-y-3 border-b border-border pb-8">
         <span className="font-mono text-xs font-semibold uppercase tracking-widest text-accent">
-          Engineering Notes &amp; Devlogs
+          Technical Notes &amp; Devlogs
         </span>
         <h1 className="neon-heading text-3xl font-extrabold tracking-tight sm:text-4xl">
           Blog

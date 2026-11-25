@@ -95,12 +95,12 @@ export interface AdditionalProject {
 // EDIT [All Pages — Overview (/), Navbar, Footer, Resume (/resume)]: Core identity, contact links, and PDF path
 export const PROFILE = {
   name: 'Austin Simmons',
-  role: 'Data Science & Systems-Minded Engineer',
+  role: 'Data Scientist & Embedded Systems Developer',
   tagline:
-    'Bridging statistical modeling, low-level C++ & embedded systems, and security-focused engineering.',
+    'Bridging statistical modeling, applied machine learning, and low-level C++ & embedded firmware development.',
   location: 'Calgary, AB',
   focusSummary:
-    'Applied Machine Learning · Low-Level C++ & Embedded Systems · Security-Minded Engineering',
+    'Applied Machine Learning · Embedded Firmware & STM32 · Low-Level C++ & Systems Development',
   links: {
     github: 'https://github.com/AustinJSimmons',
     linkedin: 'https://www.linkedin.com/in/austin-simmons-77953322a/',
@@ -140,7 +140,7 @@ export const PROFILE = {
       period: 'Expected Winter/Fall 2027 · Ongoing',
       highlights: [
         'Applied machine learning, statistical validation, distributed MapReduce pipelines, and interactive visualization.',
-        'Independent systems exploration in C++/SystemC GPU simulation and security-oriented engineering.',
+        'Independent systems exploration in C++/SystemC GPU simulation and low-level architecture.',
       ],
       isPlaceholder: false,
     },
@@ -181,11 +181,11 @@ export const PROFILE = {
       ],
     },
     {
-      category: 'Engineering & Security Mindset',
+      category: 'Testing, Tooling & Practices',
       skills: [
         'Automated Testing (pytest, SystemC)',
         'Reproducible Pipelines',
-        'Input Sanitization & Access Controls',
+        'CI/CD & Embedded Standards (BARR-C)',
         'Technical Documentation',
       ],
     },
@@ -579,7 +579,7 @@ export const ADDITIONAL_PROJECTS: AdditionalProject[] = [
     name: '479Project',
     description:
       'Multi-task Python distributed data processing pipeline implementing custom MapReduce mappers and reducers across structured tasks.',
-    tags: ['Python', 'MapReduce', 'Data Engineering'],
+    tags: ['Python', 'MapReduce', 'Distributed Data'],
     repoUrl: 'https://github.com/AustinJSimmons/479Project',
     year: 'Apr 2026',
   },

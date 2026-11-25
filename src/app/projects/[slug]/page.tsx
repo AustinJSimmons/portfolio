@@ -215,7 +215,7 @@ export default async function ProjectDetailPage({
             Implementation Challenges &amp; Solutions
           </h2>
           <p className="mt-1 text-sm text-muted">
-            Key engineering trade-offs, debugging decisions, and constraints navigated while building.
+            Key technical trade-offs, debugging decisions, and constraints navigated while building.
           </p>
         </div>
 

@@ -9,7 +9,7 @@ import { ProjectCarousel } from '@/components/ProjectCarousel';
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: `Featured project overviews and additional engineering work by ${PROFILE.name}.`,
+  description: `Featured project overviews and additional software and data science work by ${PROFILE.name}.`,
 };
 
 export default function ProjectsPage() {

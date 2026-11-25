@@ -18,7 +18,7 @@ export default function OverviewPage() {
 
         {/* EDIT [Overview (/) — Intro Bio Paragraph]: Main summary paragraph */}
         <p className="max-w-3xl text-lg leading-relaxed text-zinc-300">
-          I&apos;m a data science student who enjoys working across abstraction layers—from statistical modeling and explainable machine learning down to C++/SystemC hardware simulation, embedded systems, and practical automation. I&apos;m currently exploring security-focused engineering where low-level systems literacy and data analysis intersect.
+          I&apos;m a data science student who enjoys working across abstraction layers—from statistical modeling and explainable machine learning down to C++/SystemC hardware simulation, embedded systems, and practical automation. I&apos;m focused on the intersection of embedded systems and data science—building reliable low-level firmware and turning raw telemetry into validated, interpretable models.
         </p>
 
         <div className="no-print flex flex-wrap items-center gap-3 pt-1">
@@ -152,10 +152,10 @@ export default function OverviewPage() {
       {/* EDIT [Overview (/) — Bottom Direction Section]: Heading & closing summary paragraph */}
       <section className="space-y-3">
         <h2 className="neon-heading text-xl font-bold tracking-tight">
-          Where Data, Systems &amp; Security Meet
+          Where Embedded Systems &amp; Data Science Meet
         </h2>
         <p className="text-[15px] leading-relaxed text-zinc-300">
-          My prior embedded internship and ongoing C++/SystemC GPU simulator give me comfort below the Python abstraction layer, while my capstone and data engineering coursework train me to validate claims statistically. Together, that combination translates directly to detection engineering, telemetry analytics, and security-minded systems development.
+          My embedded firmware work (STM32, DMA, real-time acquisition) and ongoing C++/SystemC GPU simulator give me comfort below the Python abstraction layer, while my data science coursework and capstone train me to validate claims statistically. Together, that combination lets me work across the full stack—from hardware-level data acquisition to modeling and interactive visualization.
         </p>
       </section>
     </div>

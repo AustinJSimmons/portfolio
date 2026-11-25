@@ -42,7 +42,7 @@ export function ChallengeCallout({
         <div className="rounded-xl bg-accent-soft p-4 ring-1 ring-purple-500/25">
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-accent">
             <CheckCircle2 className="h-3.5 w-3.5 text-accent" />
-            <span>Engineering Solution</span>
+            <span>Technical Solution</span>
           </div>
           <p className="mt-2 text-[15px] leading-relaxed text-zinc-100">
             {item.solution}
