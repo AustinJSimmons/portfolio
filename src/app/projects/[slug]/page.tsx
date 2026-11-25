@@ -5,6 +5,7 @@ import {
   AlertTriangle,
   ArrowLeft,
   ArrowRight,
+  BookOpen,
   CheckCircle2,
   ExternalLink,
   UserCheck,
@@ -96,17 +97,28 @@ export default async function ProjectDetailPage({
               {tag}
             </span>
           ))}
-          {project.repoUrl && (
-            <a
-              href={project.repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-auto inline-flex items-center gap-1.5 rounded-xl bg-accent-strong px-4 py-2 text-xs font-semibold text-white btn-neon hover:bg-purple-400"
-            >
-              <span>View GitHub Repository</span>
-              <ExternalLink className="h-3.5 w-3.5" />
-            </a>
-          )}
+          <div className="ml-auto flex flex-wrap items-center gap-2">
+            {project.relatedBlogSlug && (
+              <Link
+                href={`/blog/${project.relatedBlogSlug}`}
+                className="inline-flex items-center gap-1.5 rounded-xl border border-purple-400/40 bg-accent-soft px-4 py-2 text-xs font-semibold text-accent transition-colors hover:bg-purple-500/25"
+              >
+                <BookOpen className="h-3.5 w-3.5" />
+                <span>{project.relatedBlogTitle ?? 'Read Devlog'}</span>
+              </Link>
+            )}
+            {project.repoUrl && (
+              <a
+                href={project.repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-xl bg-accent-strong px-4 py-2 text-xs font-semibold text-white btn-neon hover:bg-purple-400"
+              >
+                <span>View GitHub Repository</span>
+                <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+            )}
+          </div>
         </div>
       </header>
 

@@ -45,6 +45,12 @@ export function Footer() {
             Projects
           </Link>
           <Link
+            href="/blog"
+            className="transition-colors hover:text-accent"
+          >
+            Blog
+          </Link>
+          <Link
             href="/resume"
             className="inline-flex items-center gap-1.5 transition-colors hover:text-accent"
           >

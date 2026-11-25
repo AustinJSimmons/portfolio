@@ -7,6 +7,7 @@ import { PROFILE } from '@/data/projects';
 const NAV_ITEMS = [
   { label: 'Overview', href: '/', match: (p: string) => p === '/' },
   { label: 'Projects', href: '/projects', match: (p: string) => p.startsWith('/projects') },
+  { label: 'Blog', href: '/blog', match: (p: string) => p.startsWith('/blog') },
   { label: 'Resume', href: '/resume', match: (p: string) => p.startsWith('/resume') },
 ];
 

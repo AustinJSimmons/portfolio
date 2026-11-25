@@ -66,6 +66,8 @@ export interface FeaturedProject {
     placeholderNote?: string;
   };
   skillsDemonstrated: string[];
+  relatedBlogSlug?: string;
+  relatedBlogTitle?: string;
 }
 
 export interface AdditionalProject {
@@ -359,6 +361,8 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
       'From-scratch functional GPU simulator in C++ and SystemC inspired by tiny-gpu, complete with custom architecture diagrams, instruction bit-field layouts, and verified ALU/FPU execution units.',
     headlineMetric: 'C++ / SystemC · ALU & FPU Tested · Custom ISA',
     repoUrl: 'https://github.com/AustinJSimmons/sim-gpu',
+    relatedBlogSlug: 'sim-gpu-pt0',
+    relatedBlogTitle: 'Read SIM-GPU Devlog',
     tags: ['C++', 'SystemC', 'Computer Architecture', 'ISA Design', 'Digital Logic'],
     overview:
       'Inspired by tiny-gpu, sim-gpu is a self-directed engineering project to design and simulate a GPU from the ground up in C++ and SystemC. Each subsystem is documented around three core questions—what it does, its component parts, and why a GPU needs it—before implementing and functionally verifying modules prior to introducing cycle-accurate timing.',
@@ -552,14 +556,6 @@ export const ADDITIONAL_PROJECTS: AdditionalProject[] = [
     tags: ['C++', 'Graphics', 'Systems'],
     repoUrl: 'https://github.com/AustinJSimmons/MyGraphicsEngine',
     year: 'Feb 2026',
-  },
-  {
-    name: 'sim-blog',
-    description:
-      'Minimalist technical blog built with Astro and TypeScript content collections for writing engineering notes.',
-    tags: ['Astro', 'TypeScript', 'Web'],
-    repoUrl: 'https://github.com/AustinJSimmons/sim-blog',
-    year: 'Jul 2026',
   },
 ];
 
