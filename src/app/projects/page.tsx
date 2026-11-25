@@ -64,7 +64,7 @@ export default function ProjectsPage() {
               href={item.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="print-break-avoid group rounded-2xl border border-border bg-surface p-5 transition-all hover:border-purple-500/45 hover:bg-surface-elevated"
+              className="print-break-avoid group rounded-2xl border border-border bg-surface p-5 card-neon-hover hover:border-purple-500/45 hover:bg-surface-elevated"
             >
               <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2">

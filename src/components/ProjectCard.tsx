@@ -33,12 +33,18 @@ export function ProjectCard({
 }) {
   return (
     <article
-      className={`print-break-avoid group flex w-full flex-col justify-between rounded-2xl border bg-surface p-6 transition-all hover:-translate-y-0.5 hover:border-purple-400/60 hover:bg-surface-elevated ${
+      className={`print-break-avoid group relative overflow-hidden flex w-full flex-col justify-between rounded-2xl border bg-surface p-6 card-neon-hover hover:-translate-y-0.5 hover:border-purple-400/60 hover:bg-surface-elevated ${
         highlighted
-          ? 'border-purple-500/50 shadow-lg shadow-purple-500/10'
+          ? 'border-purple-500/50 card-neon-active'
           : 'border-border'
       }`}
     >
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-purple-500/15 via-purple-400/80 to-purple-500/15 transition-opacity duration-200 ${
+          highlighted ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+        }`}
+      />
       <div>
         <div className="flex items-center justify-between gap-3">
           <span className="font-mono text-xs font-medium text-muted">

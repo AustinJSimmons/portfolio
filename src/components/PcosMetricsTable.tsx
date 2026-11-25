@@ -89,7 +89,7 @@ export function PcosMetricsTable() {
               <div className="mt-2.5 h-2.5 w-full overflow-hidden rounded-full bg-zinc-800">
                 <div
                   className={`h-full rounded-full transition-all duration-500 ${
-                    isTop ? 'bg-accent' : 'bg-zinc-500'
+                    isTop ? 'bg-accent shadow-[0_0_12px_rgba(192,132,252,0.55)]' : 'bg-zinc-500'
                   }`}
                   style={{ width: `${widthPct}%` }}
                 />

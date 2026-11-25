@@ -34,7 +34,7 @@ export default function ResumePage() {
           <a
             href={PROFILE.links.resume}
             download="Austin_Simmons_Resume.pdf"
-            className="inline-flex items-center gap-2 rounded-xl bg-accent-strong px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-purple-400"
+            className="inline-flex items-center gap-2 rounded-xl bg-accent-strong px-4 py-2.5 text-sm font-semibold text-white btn-neon hover:bg-purple-400"
           >
             <Download className="h-4 w-4" />
             <span>Download PDF</span>

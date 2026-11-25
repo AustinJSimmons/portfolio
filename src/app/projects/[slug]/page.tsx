@@ -101,7 +101,7 @@ export default async function ProjectDetailPage({
               href={project.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-auto inline-flex items-center gap-1.5 rounded-xl bg-accent-strong px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-purple-400"
+              className="ml-auto inline-flex items-center gap-1.5 rounded-xl bg-accent-strong px-4 py-2 text-xs font-semibold text-white btn-neon hover:bg-purple-400"
             >
               <span>View GitHub Repository</span>
               <ExternalLink className="h-3.5 w-3.5" />
@@ -282,7 +282,7 @@ export default async function ProjectDetailPage({
         {nextProject ? (
           <Link
             href={`/projects/${nextProject.slug}`}
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent-strong px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-purple-400"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent-strong px-5 py-3 text-sm font-semibold text-white btn-neon hover:bg-purple-400"
           >
             <span>Next: {nextProject.shortTitle}</span>
             <ArrowRight className="h-4 w-4" />
@@ -290,7 +290,7 @@ export default async function ProjectDetailPage({
         ) : (
           <Link
             href="/projects"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent-strong px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-purple-400"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent-strong px-5 py-3 text-sm font-semibold text-white btn-neon hover:bg-purple-400"
           >
             <span>Back to All Projects</span>
             <ArrowRight className="h-4 w-4" />

@@ -23,7 +23,7 @@ export default function OverviewPage() {
         <div className="no-print flex flex-wrap items-center gap-3 pt-1">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 rounded-xl bg-accent-strong px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-purple-500/20 transition-colors hover:bg-purple-400"
+            className="inline-flex items-center gap-2 rounded-xl bg-accent-strong px-5 py-2.5 text-sm font-semibold text-white btn-neon hover:bg-purple-400"
           >
             <span>Explore Projects</span>
             <ArrowRight className="h-4 w-4" />
