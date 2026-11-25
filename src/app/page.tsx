@@ -18,7 +18,7 @@ export default function OverviewPage() {
 
         {/* EDIT [Overview (/) — Intro Bio Paragraph]: Main summary paragraph */}
         <p className="max-w-3xl text-lg leading-relaxed text-zinc-300">
-          I'm a Data Science student with a passion for embedded systems and applied machine learning. I enjoy working with low-level systems, analyzing data, and building applications and products that solve real-world problems. I will be finishing my home lab soon, so look forward to seeing many more embedded/firmware projects here. Ideally, I would like to use my data science skills to develop intelligent edge/embedded systems that can make decisions locally without relying on cloud connectivity but were a long ways from that goal. For now, I am focusing on building my foundation in both fields.
+          I&apos;m a Data Science student with a passion for embedded systems and applied machine learning. I enjoy working with low-level systems, analyzing data, and building applications and products that solve real-world problems. I will be finishing my home lab soon, so look forward to seeing many more embedded/firmware projects here. Ideally, I would like to use my data science skills to develop intelligent edge/embedded systems that can make decisions locally without relying on cloud connectivity, but we&apos;re a long way from that goal. For now, I am focusing on building my foundation in both fields.
         </p>
 
         <div className="no-print flex flex-wrap items-center gap-3 pt-1">
