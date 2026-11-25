@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Mail } from 'lucide-react';
+import { FileText, Mail } from 'lucide-react';
 import { GitHubIcon, LinkedInIcon } from '@/components/Icons';
 import { PROFILE } from '@/data/projects';
 
@@ -9,7 +9,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-8 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="text-sm font-semibold text-foreground">{PROFILE.name}</p>
-          <p className="text-sm text-muted">{PROFILE.presentationContext}</p>
+          <p className="text-sm text-muted">{PROFILE.role}</p>
         </div>
 
         <div className="flex flex-wrap items-center gap-4 text-sm font-medium text-muted">
@@ -38,6 +38,13 @@ export function Footer() {
             <Mail className="h-4 w-4" />
             <span>{PROFILE.links.email}</span>
           </a>
+          <Link
+            href="/resume"
+            className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
+          >
+            <FileText className="h-4 w-4" />
+            <span>Resume</span>
+          </Link>
           <Link
             href="/about"
             className="text-accent hover:text-accent-strong transition-colors"

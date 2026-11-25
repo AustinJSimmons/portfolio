@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Printer, Terminal } from 'lucide-react';
+import { FileText, Terminal } from 'lucide-react';
 import { FEATURED_PROJECTS, PROFILE } from '@/data/projects';
 
 export function Navbar() {
@@ -64,15 +64,17 @@ export function Navbar() {
             About
           </Link>
 
-          <button
-            type="button"
-            onClick={() => window.print()}
-            title="Save or print a PDF backup of this page"
-            className="ml-1 hidden sm:inline-flex items-center gap-1.5 rounded-lg border border-border bg-surface px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-slate-300 hover:bg-slate-50 cursor-pointer"
+          <Link
+            href="/resume"
+            className={`ml-1 inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors ${
+              pathname === '/resume'
+                ? 'border-teal-700/30 bg-accent-soft text-accent-strong'
+                : 'border-border bg-surface text-foreground hover:border-slate-300 hover:bg-slate-50'
+            }`}
           >
-            <Printer className="h-3.5 w-3.5 text-muted" />
-            <span>PDF Backup</span>
-          </button>
+            <FileText className="h-3.5 w-3.5 text-accent" />
+            <span>Resume</span>
+          </Link>
         </nav>
       </div>
     </header>

@@ -66,8 +66,7 @@ export function DealershipPlaceholderPanel() {
           and update{' '}
           <code className="rounded bg-white px-1.5 py-0.5 font-mono text-xs ring-1 ring-amber-300">
             src/data/projects.ts
-          </code>{' '}
-          before your Nov 30 presentation.
+          </code>.
         </p>
       </div>
     </div>

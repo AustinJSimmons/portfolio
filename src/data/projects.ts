@@ -65,7 +65,6 @@ export interface FeaturedProject {
     placeholderNote?: string;
   };
   skillsDemonstrated: string[];
-  presentationCue: string;
 }
 
 export interface AdditionalProject {
@@ -82,13 +81,13 @@ export const PROFILE = {
   tagline:
     'Bridging statistical modeling, low-level C++ & embedded systems, and security-focused engineering.',
   location: 'Calgary, AB',
-  presentationContext: 'DATA 398.1 Portfolio Showcase · Nov 30, 2026',
-  targetAudience:
-    'Technical Leads & Engineering Managers (Applied ML, Security/Telemetry Analytics, & Systems Engineering)',
+  focusSummary:
+    'Applied Machine Learning · Low-Level C++ & Embedded Systems · Security-Minded Engineering',
   links: {
     github: 'https://github.com/AustinJSimmons',
     linkedin: 'https://www.linkedin.com/in/austin-simmons-77953322a/',
     email: 'austinsimmons098@gmail.com',
+    resume: '/Austin_resume_web_version.pdf',
   },
   experience: [
     {
@@ -103,7 +102,7 @@ export const PROFILE = {
     },
     {
       title: 'B.Sc. in Data Science (Coursework & Capstone)',
-      organization: 'DATA 501 / DATA 398.1 / CPSC & SENG',
+      organization: 'Data Science & Computing Coursework',
       period: 'Expected 2026',
       highlights: [
         'Applied machine learning, statistical validation, distributed MapReduce pipelines, and interactive visualization.',
@@ -331,7 +330,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
         'Co-authored reproducible analysis workflow and model evaluation criteria across the capstone team.',
       ],
       placeholderNote:
-        'DATA 398.1 Part 1 explicitly evaluates your individual contributions—replace the first two bullets above with the exact notebooks, models, or UI pages you built.',
+        'Replace the first two bullets above with the exact notebooks, models, or UI pages you built.',
     },
     skillsDemonstrated: [
       'Supervised ML Benchmarking',
@@ -341,7 +340,6 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
       'Streamlit App Engineering',
       'Automated Testing (pytest)',
     ],
-    presentationCue: 'Target ~3 minutes: Lead with the Full vs. Low-Cost toggle, then explain why Wilcoxon tests mattered.',
   },
   {
     slug: 'sim-gpu',
@@ -420,8 +418,6 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
       'Unit-Level Hardware Verification',
       'Technical Architecture Diagramming',
     ],
-    presentationCue:
-      'Target ~3 minutes: Walk through High-Level → Compute Unit → M-Type SVG tabs, then highlight functional-first testing as your key challenge.',
   },
   {
     slug: 'dealership-workflow-automation',
@@ -514,7 +510,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
         '[Placeholder: Next feature planned before full handoff]',
       ],
       placeholderNote:
-        'Replace the [Placeholder] text in src/data/projects.ts (and optionally drop sanitized screenshots into public/images/dealership/) before your Nov 30 presentation.',
+        'Replace the [Placeholder] text in src/data/projects.ts (and optionally drop sanitized screenshots into public/images/dealership/).',
     },
     skillsDemonstrated: [
       'Google Apps Script (JS)',
@@ -523,8 +519,6 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
       'Defensive Spreadsheet Design',
       'Iterative Deployment',
     ],
-    presentationCue:
-      'Target ~2 minutes: Emphasize translating messy real-world staff workflows into validated, error-resistant automation.',
   },
 ];
 

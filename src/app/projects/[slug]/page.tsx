@@ -7,7 +7,6 @@ import {
   ArrowRight,
   CheckCircle2,
   ExternalLink,
-  Presentation,
   UserCheck,
 } from 'lucide-react';
 import { FEATURED_PROJECTS, getFeaturedProject } from '@/data/projects';
@@ -61,7 +60,7 @@ export default async function ProjectDetailPage({
 
   return (
     <article className="mx-auto max-w-5xl px-6 py-10 sm:py-14 space-y-12">
-      {/* Top Breadcrumb + Presentation Cue */}
+      {/* Top Breadcrumb */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         <Link
           href="/"
@@ -70,18 +69,13 @@ export default async function ProjectDetailPage({
           <ArrowLeft className="h-4 w-4" />
           <span>Back to Portfolio Overview</span>
         </Link>
-
-        <div className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">
-          <Presentation className="h-3.5 w-3.5 text-accent" />
-          <span>{project.presentationCue}</span>
-        </div>
       </div>
 
       {/* Header */}
       <header className="space-y-5 border-b border-border pb-8">
         <div className="flex flex-wrap items-center gap-3">
           <span className="font-mono text-xs font-semibold uppercase tracking-wider text-accent">
-            Case Study 0{projectIndex + 1} · {project.contextTag}
+            Project Overview 0{projectIndex + 1} · {project.contextTag}
           </span>
           <StatusBadge status={project.status} />
           <span className="text-xs font-medium text-muted">{project.period}</span>
@@ -265,7 +259,7 @@ export default async function ProjectDetailPage({
         </div>
       </section>
 
-      {/* Presentation Navigation Footer */}
+      {/* Project Navigation Footer */}
       <nav className="no-print flex flex-col gap-3 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between">
         {prevProject ? (
           <Link
@@ -298,7 +292,7 @@ export default async function ProjectDetailPage({
             href="/about"
             className="inline-flex items-center justify-center gap-2 rounded-xl bg-foreground px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
           >
-            <span>Wrap Up: About &amp; Experience</span>
+            <span>About &amp; Experience</span>
             <ArrowRight className="h-4 w-4" />
           </Link>
         )}

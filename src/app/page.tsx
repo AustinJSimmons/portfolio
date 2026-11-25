@@ -2,10 +2,11 @@ import Link from 'next/link';
 import {
   ArrowRight,
   ExternalLink,
+  FileText,
   Layers,
   Mail,
+  MapPin,
   Shield,
-  Sparkles,
 } from 'lucide-react';
 import { GitHubIcon, LinkedInIcon } from '@/components/Icons';
 import {
@@ -21,8 +22,8 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="space-y-6">
         <div className="inline-flex items-center gap-2 rounded-full border border-teal-700/20 bg-accent-soft px-3.5 py-1 text-xs font-semibold text-accent-strong">
-          <Sparkles className="h-3.5 w-3.5" />
-          <span>{PROFILE.presentationContext}</span>
+          <MapPin className="h-3.5 w-3.5" />
+          <span>{PROFILE.location} · Open to Internships &amp; New Grad Roles</span>
         </div>
 
         <div className="max-w-4xl space-y-4">
@@ -39,10 +40,10 @@ export default function HomePage() {
             <div className="space-y-1">
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-accent">
                 <Shield className="h-3.5 w-3.5" />
-                <span>Target Audience &amp; Positioning</span>
+                <span>Focus Areas</span>
               </div>
               <p className="text-sm sm:text-base font-medium text-foreground">
-                {PROFILE.targetAudience}
+                {PROFILE.focusSummary}
               </p>
             </div>
 
@@ -51,8 +52,15 @@ export default function HomePage() {
                 href="#featured-projects"
                 className="inline-flex items-center gap-2 rounded-xl bg-foreground px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
               >
-                <span>Explore Featured Work</span>
+                <span>Explore Projects</span>
                 <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/resume"
+                className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-slate-50"
+              >
+                <FileText className="h-4 w-4 text-accent" />
+                <span>Resume</span>
               </Link>
               <Link
                 href="/about"
@@ -98,10 +106,10 @@ export default function HomePage() {
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-accent">
-              Presentation Lineup (2–3 Projects)
+              Selected Work
             </span>
             <h2 className="mt-1 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-              Featured Case Studies
+              Featured Project Overviews
             </h2>
           </div>
           <p className="max-w-md text-sm text-muted">

@@ -35,7 +35,7 @@ body {
   line-height: 1.65;
 }
 
-/* Projector-friendly crisp focus & print fallback for DATA 398.1 PDF backup */
+/* Clean print styling */
 @media print {
   @page {
     margin: 0.6in;

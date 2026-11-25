@@ -4,6 +4,8 @@ import {
   AlertTriangle,
   ArrowLeft,
   Briefcase,
+  Download,
+  FileText,
   Mail,
   ShieldCheck,
 } from 'lucide-react';
@@ -36,6 +38,24 @@ export default function AboutPage() {
         <p className="text-lg leading-relaxed text-slate-700">
           I&apos;m a data science student who enjoys working across abstraction layers—from statistical modeling and explainable machine learning down to C++/SystemC hardware simulation, embedded systems, and practical automation. I&apos;m currently exploring security-focused engineering where low-level systems literacy and data analysis intersect.
         </p>
+
+        <div className="no-print flex flex-wrap items-center gap-3 pt-2">
+          <Link
+            href="/resume"
+            className="inline-flex items-center gap-2 rounded-xl bg-foreground px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
+          >
+            <FileText className="h-4 w-4" />
+            <span>View Resume</span>
+          </Link>
+          <a
+            href={PROFILE.links.resume}
+            download="Austin_Simmons_Resume.pdf"
+            className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-slate-50"
+          >
+            <Download className="h-4 w-4 text-accent" />
+            <span>Download Resume PDF</span>
+          </a>
+        </div>
       </header>
 
       {/* Experience & Education */}
