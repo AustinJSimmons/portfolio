@@ -94,19 +94,34 @@ export const PROFILE = {
   },
   experience: [
     {
-      title: 'Embedded Systems Intern',
-      organization: '[Placeholder: Company Name]',
-      period: '[Placeholder: Term / Year]',
+      title: 'Embedded Firmware Developer',
+      organization: 'In-line Pigging Solutions · Calgary, AB',
+      period: 'Apr 2025 – Sept 2025',
       highlights: [
-        '[Placeholder: Describe firmware, hardware bring-up, or telemetry pipeline you worked on]',
-        '[Placeholder: Mention debugging tools, protocols (e.g., SPI/I2C/UART/CAN), or measurable reliability gains]',
+        'Designed firmware architecture for an embedded prototype from the ground up.',
+        'Developed low-level drivers and packet protocols using STM32 HAL libraries.',
+        'Integrated real-time data acquisition pipelines using DMA, timers, and low-power modes.',
+        'Established CI/CD systems for firmware testing and deployment.',
+        'Enforced BARR-C embedded C coding standards and peer-reviewed code.',
       ],
-      isPlaceholder: true,
+      isPlaceholder: false,
     },
     {
-      title: 'B.Sc. in Data Science (Coursework & Capstone)',
-      organization: 'Data Science & Computing Coursework',
-      period: 'Expected 2026',
+      title: 'Software Development Intern',
+      organization: 'In-line Pigging Solutions · Calgary, AB',
+      period: 'Apr 2024 – Apr 2025',
+      highlights: [
+        'Refactored and expanded a client-facing GPS tracking system using React, JavaScript, and TypeScript.',
+        'Collaborated with UI/UX designers to turn Figma mockups into responsive, production-ready code.',
+        'Worked independently in a fast-paced, self-directed environment with minimal supervision.',
+        'Added interactive map features and filtering logic for asset management.',
+      ],
+      isPlaceholder: false,
+    },
+    {
+      title: 'B.Sc. in Data Science — Mathematics Concentration',
+      organization: 'University of Calgary',
+      period: 'Expected Winter/Fall 2027 · Ongoing',
       highlights: [
         'Applied machine learning, statistical validation, distributed MapReduce pipelines, and interactive visualization.',
         'Independent systems exploration in C++/SystemC GPU simulation and security-oriented engineering.',
@@ -129,23 +144,23 @@ export const PROFILE = {
     {
       category: 'Systems & Embedded',
       skills: [
-        'C++',
+        'C / C++',
         'SystemC',
+        'Embedded C (BARR-C), STM32 HAL & DMA',
         'Computer / GPU Architecture',
         'Custom ISA & Bitmap Design',
-        'Embedded Firmware [Update w/ Internship]',
         'Linux & Git',
       ],
     },
     {
       category: 'Automation & Web',
       skills: [
-        'Google Apps Script',
-        'Google Sheets Data Validation',
+        'React',
         'TypeScript / Next.js',
         'Tailwind CSS',
-        'Astro',
-        'Vercel CI/CD',
+        'Google Apps Script',
+        'Google Sheets Data Validation',
+        'Astro & Vercel CI/CD',
       ],
     },
     {
