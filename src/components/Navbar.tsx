@@ -14,7 +14,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="no-print sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur-md">
+    <header className="no-print sticky top-0 z-40 bg-surface/90 backdrop-blur-md navbar-neon">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link
           href="/"
@@ -42,6 +42,10 @@ export function Navbar() {
           })}
         </nav>
       </div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-purple-500/25 via-purple-400/75 to-purple-500/25"
+      />
     </header>
   );
 }
