@@ -9,7 +9,7 @@ export default function OverviewPage() {
       {/* EDIT [Overview (/) — Intro / Hero]: Location, role & name come from PROFILE in src/data/projects.ts; bio paragraph & CTAs below are editable here */}
       <section className="space-y-6">
         <p className="font-mono text-xs font-semibold uppercase tracking-widest text-accent">
-          {PROFILE.location} · {PROFILE.role}
+          {PROFILE.location} - {PROFILE.role}
         </p>
 
         <h1 className="neon-heading text-4xl font-extrabold tracking-tight sm:text-5xl">
@@ -164,7 +164,7 @@ export default function OverviewPage() {
                 {group.category}
               </h3>
               <p className="text-sm leading-relaxed text-muted">
-                {group.skills.join(' · ')}
+                {group.skills.join(' - ')}
               </p>
             </div>
           ))}

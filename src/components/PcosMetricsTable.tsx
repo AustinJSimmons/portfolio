@@ -19,7 +19,7 @@ export function PcosMetricsTable() {
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-accent">
             <BarChart3 className="h-4 w-4" />
-            <span>Interactive Benchmark · NB07 (5-Fold Stratified CV)</span>
+            <span>Interactive Benchmark - NB07 (5-Fold Stratified CV)</span>
           </div>
           <h3 className="mt-1 text-xl font-bold text-foreground">
             {mode === 'full'

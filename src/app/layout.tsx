@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: {
     default: `${PROFILE.name} — Data Science & Systems Portfolio`,
-    template: `%s · ${PROFILE.name}`,
+    template: `%s - ${PROFILE.name}`,
   },
   description: PROFILE.tagline,
 };

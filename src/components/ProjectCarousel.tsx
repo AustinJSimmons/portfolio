@@ -1,11 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, type CSSProperties } from 'react';
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import type { FeaturedProject } from '@/data/projects';
 import { ProjectCard } from '@/components/ProjectCard';
 
 const AUTO_ADVANCE_MS = 5500;
+const TRANSITION_FALLBACK_MS = 580;
+const BUFFER_OFFSETS = [-1, 0, 1, 2, 3] as const;
 
 export function ProjectCarousel({
   projects,
@@ -13,33 +15,76 @@ export function ProjectCarousel({
   projects: FeaturedProject[];
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [shift, setShift] = useState<-1 | 0 | 1>(0);
   const [isPaused, setIsPaused] = useState(false);
 
   const count = projects.length;
-  const visibleCount = Math.min(3, count);
 
-  const step = (delta: number) => {
-    setActiveIndex((prev) => (prev + delta + count) % count);
-  };
+  const startSlide = useCallback(
+    (direction: -1 | 1) => {
+      if (count <= 1 || shift !== 0) return;
+      setShift(direction);
+    },
+    [count, shift]
+  );
+
+  const finalizeSlide = useCallback(() => {
+    if (shift === 0) return;
+    setActiveIndex((prev) => (prev - shift + count) % count);
+    setShift(0);
+  }, [shift, count]);
 
   useEffect(() => {
-    if (isPaused || count <= 1) return;
+    if (shift === 0) return;
+    const fallback = setTimeout(finalizeSlide, TRANSITION_FALLBACK_MS);
+    return () => clearTimeout(fallback);
+  }, [shift, finalizeSlide]);
+
+  useEffect(() => {
+    if (isPaused || count <= 1 || shift !== 0) return;
     const timer = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % count);
+      setShift(-1);
     }, AUTO_ADVANCE_MS);
     return () => clearInterval(timer);
-  }, [isPaused, activeIndex, count]);
+  }, [isPaused, activeIndex, count, shift]);
 
   if (count === 0) return null;
 
-  const visibleSlots = Array.from({ length: visibleCount }, (_, offset) => {
-    const projectIndex = (activeIndex + offset) % count;
-    return {
-      project: projects[projectIndex],
-      projectIndex,
-      isCenterFocus: visibleCount === 3 ? offset === 1 : offset === 0,
-    };
-  });
+  if (count === 1) {
+    return (
+      <div className="max-w-md">
+        <ProjectCard project={projects[0]} highlighted />
+      </div>
+    );
+  }
+
+  const handleDotClick = (targetIdx: number) => {
+    if (shift !== 0 || targetIdx === activeIndex) return;
+    if (targetIdx === (activeIndex + 1) % count) {
+      startSlide(-1);
+    } else if (targetIdx === (activeIndex - 1 + count) % count) {
+      startSlide(1);
+    } else {
+      setActiveIndex(targetIdx);
+    }
+  };
+
+  const focusSlot =
+    count >= 3
+      ? shift === -1
+        ? 3
+        : shift === 1
+          ? 1
+          : 2
+      : shift === -1
+        ? 2
+        : shift === 1
+          ? 0
+          : 1;
+
+  const trackStyle = {
+    transform: `translate3d(calc((var(--slot-w) * -1) + (var(--slot-w) * ${shift})), 0, 0)`,
+  } as CSSProperties;
 
   return (
     <div
@@ -71,14 +116,14 @@ export function ProjectCarousel({
             )}
           </button>
           <span className="hidden sm:inline text-zinc-500">
-            · Hover or use arrows to browse manually
+            - Hover or use arrows to browse manually
           </span>
         </div>
 
         <div className="flex items-center gap-2">
           <button
             type="button"
-            onClick={() => step(-1)}
+            onClick={() => startSlide(1)}
             aria-label="Previous project"
             className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-surface text-foreground transition-colors hover:border-purple-400/60 hover:bg-surface-elevated hover:text-accent cursor-pointer"
           >
@@ -86,7 +131,7 @@ export function ProjectCarousel({
           </button>
           <button
             type="button"
-            onClick={() => step(1)}
+            onClick={() => startSlide(-1)}
             aria-label="Next project"
             className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-surface text-foreground transition-colors hover:border-purple-400/60 hover:bg-surface-elevated hover:text-accent cursor-pointer"
           >
@@ -95,20 +140,34 @@ export function ProjectCarousel({
         </div>
       </div>
 
-      {/* 3-card cyclic viewport */}
-      <div className="grid gap-6 lg:grid-cols-3">
-        {visibleSlots.map(({ project, projectIndex, isCenterFocus }, slotIdx) => (
-          <div
-            key={`${project.slug}-${slotIdx}`}
-            className={slotIdx === 0 ? 'flex' : 'hidden lg:flex'}
-          >
-            <ProjectCard
-              project={project}
-              index={projectIndex}
-              highlighted={isCenterFocus}
-            />
-          </div>
-        ))}
+      {/* Smooth 5-slot cyclic sliding viewport */}
+      <div className="-mx-3 overflow-hidden py-3">
+        <div
+          style={trackStyle}
+          onTransitionEnd={(e) => {
+            if (e.target === e.currentTarget && e.propertyName === 'transform') {
+              finalizeSlide();
+            }
+          }}
+          className={`flex w-full [--slot-w:100%] lg:[--slot-w:33.333333%] ${
+            shift !== 0
+              ? 'transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]'
+              : 'transition-none'
+          }`}
+        >
+          {BUFFER_OFFSETS.map((offset, slotIdx) => {
+            const projectIndex = (activeIndex + offset + count) % count;
+            const project = projects[projectIndex];
+            return (
+              <div key={slotIdx} className="flex w-full shrink-0 px-3 lg:w-1/3">
+                <ProjectCard
+                  project={project}
+                  highlighted={slotIdx === focusSlot}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
 
       {/* Dot indicators */}
@@ -119,7 +178,7 @@ export function ProjectCarousel({
             <button
               key={project.slug}
               type="button"
-              onClick={() => setActiveIndex(idx)}
+              onClick={() => handleDotClick(idx)}
               aria-label={`Focus ${project.shortTitle}`}
               className={`h-2 rounded-full transition-all cursor-pointer ${
                 isCurrent

@@ -77,7 +77,7 @@ export default async function ProjectDetailPage({
       <header className="space-y-5 border-b border-border pb-8">
         <div className="flex flex-wrap items-center gap-3">
           <span className="font-mono text-xs font-semibold uppercase tracking-wider text-accent">
-            Project Overview 0{projectIndex + 1} · {project.contextTag}
+            Project Overview - {project.contextTag}
           </span>
           <StatusBadge status={project.status} />
           <span className="text-xs font-medium text-muted">{project.period}</span>
@@ -99,6 +99,17 @@ export default async function ProjectDetailPage({
             </span>
           ))}
           <div className="ml-auto flex flex-wrap items-center gap-2">
+            {project.liveDemoUrl && (
+              <a
+                href={project.liveDemoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-xl border border-purple-400/40 bg-accent-soft px-4 py-2 text-xs font-semibold text-accent transition-colors hover:bg-purple-500/25"
+              >
+                <span>Live Dashboard</span>
+                <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+            )}
             {project.relatedBlogSlug && (
               <Link
                 href={`/blog/${project.relatedBlogSlug}`}

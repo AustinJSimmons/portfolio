@@ -106,7 +106,7 @@ export const PROFILE = {
     'Bridging statistical modeling, applied machine learning, and low-level C++ & embedded firmware development.',
   location: 'Calgary, AB',
   focusSummary:
-    'Applied Machine Learning · Embedded Firmware & STM32 · Low-Level C++ & Systems Development',
+    'Applied Machine Learning - Embedded Firmware & STM32 - Low-Level C++ & Systems Development',
   links: {
     github: 'https://github.com/AustinJSimmons',
     linkedin: 'https://www.linkedin.com/in/austin-simmons-77953322a/',
@@ -117,7 +117,7 @@ export const PROFILE = {
   experience: [
     {
       title: 'Embedded Firmware Developer',
-      organization: 'In-line Pigging Solutions · Calgary, AB',
+      organization: 'In-line Pigging Solutions - Calgary, AB',
       period: 'Apr 2025 – Sept 2025',
       highlights: [
         'Designed firmware architecture for an embedded prototype from the ground up.',
@@ -130,7 +130,7 @@ export const PROFILE = {
     },
     {
       title: 'Software Development Intern',
-      organization: 'In-line Pigging Solutions · Calgary, AB',
+      organization: 'In-line Pigging Solutions - Calgary, AB',
       period: 'Apr 2024 – Apr 2025',
       highlights: [
         'Refactored and expanded a client-facing GPS tracking system using React, JavaScript, and TypeScript.',
@@ -143,7 +143,7 @@ export const PROFILE = {
     {
       title: 'B.Sc. in Data Science — Mathematics Concentration',
       organization: 'University of Calgary',
-      period: 'Expected Winter/Fall 2027 · Ongoing',
+      period: 'Expected Winter/Fall 2027 - Ongoing',
       highlights: [
         'Applied machine learning, statistical validation, distributed MapReduce pipelines, and data visualization.',
       ],
@@ -332,8 +332,9 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     contextTag: 'Data Science & Applied ML',
     summary:
       'End-to-end diagnostic ML pipeline and 3-page Streamlit application evaluating 5 classifiers on 541 clinical records, comparing full lab panels against low-cost non-invasive screening.',
-    headlineMetric: '0.9623 CV AUC · 541 Patients · 5 Models',
+    headlineMetric: '0.9623 CV AUC - 541 Patients - 5 Models',
     repoUrl: 'https://github.com/AustinJSimmons/pcos-diagnostic-dashboard',
+    liveDemoUrl: 'https://pcos-diagnostic-dashboard-lx9z2zffjzysg2hsxvzhdw.streamlit.app/',
     tags: ['Python', 'XGBoost', 'SHAP', 'K-Means', 'Streamlit', 'pytest'],
     overview:
       'Built on a clinical dataset of 541 patients (177 PCOS cases, 364 controls) across 41 features—spanning hormonal lifestyle, and ultrasound findings from 10 hospitals in Kerala, India. Rather than stopping at a single accuracy score, the pipeline tests whether non-invasive symptoms and vitals alone can support accessible screening when expensive lab or ultrasound tests are unavailable.',
@@ -548,7 +549,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
         isPlaceholder: false,
       },
       {
-        phase: '04 · User Rollout & Iteration',
+        phase: '04 - User Rollout & Iteration',
         title: 'Testing with Staff & Ongoing Refinements',
         description:
           'Collaborating with the delivery coordinator to gather feedback and identify areas for improvement.',
@@ -605,14 +606,6 @@ export const ADDITIONAL_PROJECTS: AdditionalProject[] = [
     tags: ['Python', 'MapReduce', 'Distributed Data'],
     repoUrl: 'https://github.com/AustinJSimmons/479Project',
     year: 'Apr 2026',
-  },
-  {
-    name: 'MyGraphicsEngine',
-    description:
-      'C++ graphics engine project exploring real-time rendering pipelines, math primitives, and low-level memory/resource management.',
-    tags: ['C++', 'Graphics', 'Systems'],
-    repoUrl: 'https://github.com/AustinJSimmons/MyGraphicsEngine',
-    year: 'Feb 2026',
   },
 ];
 

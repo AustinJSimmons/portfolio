@@ -24,11 +24,9 @@ export function StatusBadge({ status }: { status: FeaturedProject['status'] }) {
 
 export function ProjectCard({
   project,
-  index,
   highlighted = false,
 }: {
   project: FeaturedProject;
-  index: number;
   highlighted?: boolean;
 }) {
   return (
@@ -48,7 +46,7 @@ export function ProjectCard({
       <div>
         <div className="flex items-center justify-between gap-3">
           <span className="font-mono text-xs font-medium text-muted">
-            0{index + 1} · {project.contextTag}
+            {project.contextTag}
           </span>
           <StatusBadge status={project.status} />
         </div>
@@ -89,19 +87,34 @@ export function ProjectCard({
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </Link>
 
-          {project.repoUrl ? (
-            <a
-              href={project.repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-xs font-medium text-muted transition-colors hover:text-foreground"
-            >
-              <span>GitHub</span>
-              <ExternalLink className="h-3.5 w-3.5" />
-            </a>
-          ) : (
-            <span className="text-xs font-medium text-muted">Private / Client</span>
-          )}
+          <div className="flex items-center gap-3">
+            {project.liveDemoUrl && (
+              <a
+                href={project.liveDemoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-xs font-medium text-accent transition-colors hover:text-purple-300"
+              >
+                <span>Dashboard</span>
+                <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+            )}
+            {project.repoUrl ? (
+              <a
+                href={project.repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-xs font-medium text-muted transition-colors hover:text-foreground"
+              >
+                <span>GitHub</span>
+                <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+            ) : (
+              !project.liveDemoUrl && (
+                <span className="text-xs font-medium text-muted">Private / Client</span>
+              )
+            )}
+          </div>
         </div>
       </div>
     </article>
