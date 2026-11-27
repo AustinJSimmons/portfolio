@@ -5,6 +5,7 @@
  * - PROFILE.name / role / links  -> Navbar (all pages), Footer (all pages), Overview (/), Resume (/resume)
  * - PROFILE.experience           -> Overview (/) "Experience & Education" section
  * - PROFILE.skillGroups          -> Overview (/) "Core Skills" section
+ * - PROFILE.interests            -> Overview (/) "Interests" section
  * - PCOS_MODEL_RESULTS           -> Project Overview: /projects/pcos-diagnostic-dashboard
  * - SIM_GPU_DIAGRAMS/MILESTONES  -> Project Overview: /projects/sim-gpu
  * - FEATURED_PROJECTS            -> Projects (/projects) carousel + /projects/<slug> detail pages
@@ -13,6 +14,11 @@
  */
 
 export type ProjectStatus = 'Completed' | 'Ongoing';
+
+export interface InterestItem {
+  topic: string;
+  description: string;
+}
 
 export interface MetricItem {
   label: string;
@@ -139,8 +145,7 @@ export const PROFILE = {
       organization: 'University of Calgary',
       period: 'Expected Winter/Fall 2027 · Ongoing',
       highlights: [
-        'Applied machine learning, statistical validation, distributed MapReduce pipelines, and interactive visualization.',
-        'Independent systems exploration in C++/SystemC GPU simulation and low-level architecture.',
+        'Applied machine learning, statistical validation, distributed MapReduce pipelines, and data visualization.',
       ],
       isPlaceholder: false,
     },
@@ -190,6 +195,29 @@ export const PROFILE = {
       ],
     },
   ],
+  // EDIT [Overview (/) — "Interests" section]: Add, remove, or edit your current interests and topics of study
+  interests: [
+    {
+      topic: 'Embedded & Low-level Systems',
+      description:
+        'Interested in the fundamentals of computer architecture, firmware development, and operating systems. Currently exploring embedded systems design with STM32 microcontrollers, low-level C/C++ programming, and custom instruction set architecture (ISA) design. Also exploring the fundamentals of computer architecture, including SIMT execution, memory hierarchies, and hardware simulation in C++ and SystemC.',
+    },
+    {
+      topic: 'Edge AI & On-Device ML',
+      description:
+        'Running lightweight inference and decision-making directly on resource-constrained microcontrollers without relying on cloud connectivity.',
+    },
+    {
+      topic: 'GPU & Computer Architecture',
+      description:
+        'Exploring SIMT execution, custom ISA design, memory hierarchies, and hardware simulation in C++ and SystemC.',
+    },
+    {
+      topic: 'Embedded Firmware & Home Lab',
+      description:
+        'Building out a personal electronics and firmware workbench for STM32 bare-metal drivers, DMA pipelines, and hardware bring-up.',
+    },
+  ] satisfies InterestItem[],
 };
 
 // EDIT [Project Overview (/projects/pcos-diagnostic-dashboard) — Benchmark Table]: Model CV AUC scores & notes

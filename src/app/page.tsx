@@ -69,6 +69,31 @@ export default function OverviewPage() {
 
       <hr className="border-border" />
 
+      {/* EDIT [Overview (/) — Interests]: Heading below; items come from PROFILE.interests in src/data/projects.ts */}
+      <section className="space-y-6">
+        <h2 className="neon-heading text-2xl font-bold tracking-tight">
+          Interests
+        </h2>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          {PROFILE.interests.map((item) => (
+            <div
+              key={item.topic}
+              className="print-break-avoid rounded-2xl border border-border bg-surface p-5"
+            >
+              <h3 className="text-base font-bold text-foreground">
+                {item.topic}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <hr className="border-border" />
+
       {/* EDIT [Overview (/) — Experience & Education]: Heading below; cards come from PROFILE.experience in src/data/projects.ts */}
       <section className="space-y-6">
         <h2 className="neon-heading text-2xl font-bold tracking-tight">
