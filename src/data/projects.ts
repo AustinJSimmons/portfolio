@@ -198,11 +198,6 @@ export const PROFILE = {
   // EDIT [Overview (/) — "Interests" section]: Add, remove, or edit your current interests and topics of study
   interests: [
     {
-      topic: 'Embedded & Low-level Systems',
-      description:
-        'Interested in the fundamentals of computer architecture, firmware development, and operating systems. Currently exploring embedded systems design with STM32 microcontrollers, low-level C/C++ programming, and custom instruction set architecture (ISA) design. Also exploring the fundamentals of computer architecture, including SIMT execution, memory hierarchies, and hardware simulation in C++ and SystemC.',
-    },
-    {
       topic: 'Edge AI & On-Device ML',
       description:
         'Running lightweight inference and decision-making directly on resource-constrained microcontrollers without relying on cloud connectivity.',
